@@ -27,3 +27,9 @@ The design catalog demonstrates ready, loading, empty, error, offline and permis
 ## Refreshing screenshots
 
 Run `npm run dev`. Capture the root page in both themes, open the project dialog and submit an empty name, then open `/public/index.html#state-lab`. Keep real personal data out of examples. Save browser captures as JPEG in `docs/images/`; do not replace screenshots with generated mockups.
+
+## Workflow components (0.3.0)
+
+![Search, password visibility, stepper, description list and copy action](images/components-030.jpg)
+
+Browser capture from the production build. Search filters the example project table; clear restores focus. Password visibility is local UI state.

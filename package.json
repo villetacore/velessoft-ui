@@ -1,7 +1,7 @@
 {
   "name": "velessoft-ui-workspace",
   "private": true,
-  "version": "0.2.0",
+  "version": "0.3.0",
   "author": "villetacore <villetacore@proton.me>",
   "license": "MIT",
   "workspaces": [

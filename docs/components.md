@@ -110,3 +110,29 @@ import { VelessoftProvider, en } from '@villetacore/velessoft-ui';
 ## Keyboard
 
 Buttons use Enter/Space; fields and selects use native keyboard interaction. Tabs, menus and segmented controls follow the WAI-ARIA Authoring Practices patterns listed above. Validate with keyboard and assistive technology in your product.
+
+## Workflow components (0.3.0)
+
+| Component | Props | Behavior |
+| --- | --- | --- |
+| SearchInput | Input props except type/value/defaultValue/onChange/endAddon; value?, defaultValue?, onValueChange?, clearLabel | Controlled or uncontrolled text. Clear reports an empty string and restores input focus. Disabled/readOnly respected. |
+| PasswordInput | Input props except type/endAddon; showLabel, hideLabel | Starts hidden. Toggle changes visibility without changing the value. Override autoComplete for new passwords. |
+| CopyButton | Button props except onClick/children/loading/loadingText; value, label, copiedLabel, errorLabel, onCopied? | HTTPS/localhost Clipboard API. Announces success/failure; prevents concurrent copies. New value resets feedback. |
+| Stepper | items: {id,label,description?,disabled?}[], current, label, onStepChange?, className? | Ordered list with aria-current=step. Informational by default; optional native navigation buttons. Caller validates transitions. IDs must be unique. |
+| DescriptionList | items: {id,term,description}[]; native dl props | Semantic dt/dd pairs; wraps and stacks on narrow screens. IDs must be unique. |
+
+Labels are explicit props so applications can translate them. Search is synchronous; consumers own debounce and cancellation. CopyButton does not use legacy clipboard fallbacks or retain copied content. Stepper does not hide panels or validate a form.
+
+```tsx
+<SearchInput label="Search projects" clearLabel="Clear search"
+  value={query} onValueChange={setQuery} />
+<PasswordInput label="Password" showLabel="Show" hideLabel="Hide" />
+<CopyButton value="npm install @villetacore/velessoft-ui"
+  label="Copy" copiedLabel="Copied" errorLabel="Copy failed" />
+<Stepper label="Setup" current="review" items={[
+  {id:'details',label:'Details'}, {id:'review',label:'Review'}
+]} />
+<DescriptionList items={[{id:'owner',term:'Owner',description:'villetacore'}]} />
+```
+
+These five React components are exported from the UI package. Their CSS is also available via `@villetacore/velessoft-css/components/workflow.css`. Equivalent new Web Component custom elements are not included in this release.

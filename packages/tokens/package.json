@@ -1,6 +1,6 @@
 {
   "name": "@villetacore/velessoft-tokens",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Design tokens for Velessoft UI: CSS variables, SCSS, JS/JSON and Tailwind presets.",
   "type": "module",
   "author": "villetacore <villetacore@proton.me>",

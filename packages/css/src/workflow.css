@@ -1,0 +1,100 @@
+/* Working-screen patterns. MIT © 2026 villetacore. */
+.vs-copy {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.vs-copy [role="status"] {
+  font-size: 12px;
+}
+.vs-stepper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.vs-stepper li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  flex: 1 1 160px;
+  min-width: 0;
+  padding: 12px;
+  border-top: 3px solid var(--vs-border);
+  background: var(--vs-surface);
+}
+.vs-stepper li[aria-current="step"] {
+  border-top-color: var(--vs-accent);
+}
+.vs-stepper li[data-complete] {
+  border-top-color: var(--vs-primary);
+}
+.vs-step-number {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  border: 1px solid var(--vs-border);
+  font: 12px var(--vs-font-mono);
+}
+.vs-stepper [aria-current="step"] .vs-step-number {
+  background: var(--vs-primary);
+  color: var(--vs-on-primary);
+}
+.vs-stepper strong,
+.vs-stepper button {
+  font-size: 13px;
+}
+.vs-stepper p {
+  font-size: 12px;
+  color: var(--vs-muted);
+  margin: 4px 0 0;
+  overflow-wrap: anywhere;
+}
+.vs-stepper button {
+  font-family: inherit;
+  color: var(--vs-link);
+  background: none;
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+  min-height: var(--vs-control-height);
+  text-align: start;
+}
+.vs-stepper button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.vs-stepper button:focus-visible {
+  outline: 2px solid var(--vs-link);
+  outline-offset: 3px;
+}
+.vs-description-list {
+  margin: 0;
+}
+.vs-description-list > div {
+  display: grid;
+  grid-template-columns: minmax(100px, 1fr) minmax(0, 2fr);
+  gap: 16px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--vs-border);
+}
+.vs-description-list dt {
+  color: var(--vs-muted);
+  font-size: 12px;
+}
+.vs-description-list dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+  font-size: 14px;
+}
+@media (max-width: 480px) {
+  .vs-description-list > div {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+}

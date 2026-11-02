@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.3.0 (unreleased)
+
+- New React SearchInput, PasswordInput, CopyButton, Stepper and DescriptionList with shared framework-agnostic CSS.
+- Controlled search clearing preserves focus; clipboard failures are announced; disabled navigation is respected.
+- Live workflow examples, explicit localization labels and seven new interaction/semantics tests.
+
+
 ## 0.2.0
 
 ### Multi-framework packages

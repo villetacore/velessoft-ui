@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import { createRoot } from "react-dom/client";
 import {
+  SearchInput,
+  PasswordInput,
+  CopyButton,
+  Stepper,
+  DescriptionList,
   Accordion,
   Alert,
   Avatar,
@@ -97,7 +102,7 @@ function Workspace({
         />
         <div className="intro">
           <div>
-            <small>EXPERIMENTAL / 0.2.0</small>
+            <small>EXPERIMENTAL / 0.3.0</small>
             <h1>Рабочая область</h1>
             <p>
               Настоящие React-компоненты. Данные примера хранятся только в
@@ -404,6 +409,63 @@ function Workspace({
             },
           ]}
         />
+        <section style={{ marginTop: 32 }}>
+          <h2>Рабочие сценарии</h2>
+          <Stepper
+            label="Создание проекта"
+            current="details"
+            items={[
+              {
+                id: "account",
+                label: "Команда",
+                description: "Выберите участников",
+              },
+              {
+                id: "details",
+                label: "Настройки",
+                description: "Задайте параметры",
+              },
+              {
+                id: "review",
+                label: "Проверка",
+                description: "Подтвердите создание",
+              },
+            ]}
+          />
+          <Grid min={260} style={{ marginTop: 16 }}>
+            <div>
+              <SearchInput
+                label="Фильтр проектов"
+                clearLabel="Очистить поиск"
+                value={query}
+                onValueChange={setQuery}
+              />
+              <PasswordInput
+                label="Пароль (пример)"
+                showLabel="Показать"
+                hideLabel="Скрыть"
+                autoComplete="new-password"
+                hint="Демонстрационное поле; данные никуда не отправляются"
+              />
+            </div>
+            <div>
+              <DescriptionList
+                items={[
+                  { id: "owner", term: "Автор", description: "villetacore" },
+                  { id: "version", term: "Версия", description: "0.3.0" },
+                  { id: "license", term: "Лицензия", description: "MIT" },
+                ]}
+              />
+              <CopyButton
+                style={{ marginTop: 12 }}
+                value="npm install @villetacore/velessoft-ui"
+                label="Копировать команду"
+                copiedLabel="Скопировано"
+                errorLabel="Буфер недоступен — скопируйте команду вручную"
+              />
+            </div>
+          </Grid>
+        </section>
         <footer>© 2026 villetacore · MIT</footer>
       </main>
 

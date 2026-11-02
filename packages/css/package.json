@@ -1,6 +1,6 @@
 {
   "name": "@villetacore/velessoft-css",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Framework-agnostic CSS components for Velessoft UI. Works with plain HTML, Vue, Svelte, Angular, Solid, Astro, htmx and any server templates.",
   "type": "module",
   "author": "villetacore <villetacore@proton.me>",
@@ -35,7 +35,7 @@
     "*.css"
   ],
   "peerDependencies": {
-    "@villetacore/velessoft-tokens": "^0.2.0"
+    "@villetacore/velessoft-tokens": "^0.3.0"
   },
   "peerDependenciesMeta": {
     "@villetacore/velessoft-tokens": {

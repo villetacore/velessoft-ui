@@ -127,3 +127,7 @@ Start with [CONTRIBUTING](CONTRIBUTING.md). Keep changes small, document behavio
 ## License
 
 MIT © 2026 **villetacore (Виллета Корь)**. Fonts and icons retain their original licenses; see [third-party notices](THIRD_PARTY_NOTICES.md). Early generated branding images are reference concepts. No trademark rights are granted by the code license.
+
+## Next version: 0.3.0
+
+Five additional React components are available in source: **SearchInput, PasswordInput, CopyButton, Stepper, DescriptionList**. See [API and usage](docs/components.md#workflow-components-030) and [screenshot](docs/images/components-030.jpg). This version is prepared in source; registry publication requires a release.
