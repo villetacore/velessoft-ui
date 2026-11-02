@@ -2,12 +2,14 @@
 
 [Documentation](README.md) / Accessibility
 
-The library uses native controls and linked labels/descriptions. Four interaction tests currently exercise loading buttons, field descriptions, checkbox labels and controlled dialog behavior. This is not a full accessibility audit.
+The library uses native controls, linked labels/descriptions and WAI-ARIA patterns for tabs, menus, tooltips, switches and progress. Interaction tests cover loading buttons, field descriptions, dialogs, tabs and menu keyboard navigation, tooltips, toasts, pagination, sortable tables, and the Web Components. This is not a full accessibility audit.
 
 Before shipping:
 
 - Navigate every action with Tab and Shift+Tab; check visible focus.
-- Open and close the dialog with keyboard; verify focus return and Escape.
+- Open and close dialogs, drawers and menus with keyboard; verify focus return and Escape.
+- Do not put essential information only in tooltips.
+- Respect `prefers-reduced-motion` (built-in animations already do).
 - Confirm field labels and errors in a screen reader.
 - Check contrast in both themes, disabled states and custom overrides.
 - Check 200% text scaling, 400% zoom, long content and narrow screens.

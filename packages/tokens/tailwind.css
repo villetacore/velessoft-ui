@@ -1,0 +1,21 @@
+/* Generated from tokens.json by scripts/build-tokens.mjs. Do not edit. */
+@theme inline {
+  --color-vs-bg: var(--vs-bg);
+  --color-vs-surface: var(--vs-surface);
+  --color-vs-surface-muted: var(--vs-surface-muted);
+  --color-vs-text: var(--vs-text);
+  --color-vs-muted: var(--vs-muted);
+  --color-vs-border: var(--vs-border);
+  --color-vs-primary: var(--vs-primary);
+  --color-vs-on-primary: var(--vs-on-primary);
+  --color-vs-link: var(--vs-link);
+  --color-vs-success: var(--vs-success);
+  --color-vs-error: var(--vs-error);
+  --color-vs-warning: var(--vs-warning);
+  --color-vs-accent: var(--vs-accent);
+  --color-vs-info: var(--vs-info);
+  --color-vs-overlay: var(--vs-overlay);
+  --font-vs: var(--vs-font-family);
+  --font-vs-mono: var(--vs-font-mono);
+  --radius-vs: var(--vs-radius-control);
+}

@@ -1,7 +1,7 @@
 {
   "name": "velessoft-ui-workspace",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "villetacore <villetacore@proton.me>",
   "license": "MIT",
   "workspaces": [
@@ -9,13 +9,15 @@
   ],
   "scripts": {
     "tokens": "node scripts/build-tokens.mjs",
-    "build": "npm run tokens && npm run build -w @velessoft/ui && vite build",
+    "build:packages": "npm run tokens && npm run build -w @villetacore/velessoft-css -w @villetacore/velessoft-elements -w @villetacore/velessoft-ui",
+    "build": "npm run build:packages && vite build",
     "dev": "vite --host 127.0.0.1",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "check": "npm run typecheck && npm test && npm run build",
-    "pack": "npm run build && node scripts/pack.mjs",
-    "format": "prettier --write packages/ui/src examples/dashboard scripts tests *.ts"
+    "verify:packages": "node scripts/verify-packages.mjs",
+    "pack": "npm run build:packages && node scripts/pack.mjs",
+    "format": "prettier --write packages/*/src examples scripts tests *.ts"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.0.0",

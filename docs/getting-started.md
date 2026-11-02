@@ -2,17 +2,29 @@
 
 [Documentation](README.md) / Getting started
 
-## Install
+## Pick your packages
 
-Use the two archive URLs in the [root README](../README.md#install-the-library). They install packages named `@velessoft/ui` and `@velessoft/tokens` into your application. React and React DOM are peer dependencies; provide version 18 or newer. React 19 is the version exercised in this repository.
+| You use | Install |
+| --- | --- |
+| React / Next.js / Remix | `@villetacore/velessoft-ui` + `@villetacore/velessoft-tokens` |
+| Vue, Svelte, Angular, Solid, Astro, HTML | `@villetacore/velessoft-css` + `@villetacore/velessoft-tokens` + `@villetacore/velessoft-elements` |
+| Only colors/spacing (e.g. with Tailwind) | `@villetacore/velessoft-tokens` |
+
+React and React DOM 18+ are peer dependencies of the React package. JavaScript is ESM with TypeScript declarations.
+
+## React
 
 ```tsx
-import { Button } from '@velessoft/ui';
-import '@velessoft/tokens/tokens.css';
-import '@velessoft/ui/styles.css';
+import { Button } from '@villetacore/velessoft-ui';
+import '@villetacore/velessoft-tokens/tokens.css';
+import '@villetacore/velessoft-ui/styles.css';
 ```
 
-CSS imports need a bundler that supports them, such as Vite. Load tokens before component styles. JavaScript is ESM with TypeScript declarations; a CommonJS build is not provided. Components do not bundle a font. Set a readable application font yourself; the design catalog includes licensed local font files.
+Load tokens before component styles, or use `@villetacore/velessoft-ui/full.css` which contains both. Add `className="vs-root"` to your app root for the base font, colors and box sizing. Components do not bundle a font; the token `--vs-font-family` prefers Manrope and falls back to the system UI font.
+
+## Other frameworks
+
+See the [framework guide](frameworks.md) for Vue, Svelte, Angular, Solid, Astro, Tailwind and CDN setup.
 
 ## Clone and run
 
@@ -22,7 +34,7 @@ npm run dev
 npm run check
 ```
 
-The development address is printed in the terminal; the port may differ if 5173 is occupied. The root page is the React example, `/public/index.html` is the catalog.
+The root page is the React example, `/examples/html/` is the CSS + Web Components example, `/public/index.html` is the design catalog.
 
 ## Build and consume locally
 
@@ -30,12 +42,12 @@ The development address is printed in the terminal; the port may differ if 5173 
 npm run pack
 ```
 
-This creates `artifacts/velessoft-ui-0.1.0.tgz` and `artifacts/velessoft-tokens-0.1.0.tgz`. From another app, install both local archive paths with `npm install`.
+Creates four archives in `artifacts/` (`villetacore-velessoft-{tokens,css,elements,ui}-0.2.0.tgz`). From another app, `npm install` the archive paths. `npm run verify:packages` does exactly that in a temporary project.
 
 ## Troubleshooting
 
-- **Missing colors:** import token CSS and check theme scope.
-- **Dark modal uses light colors:** put `data-theme` on an ancestor of the dialog, preferably the application root.
-- **Package name not found in npm:** use the archive URLs; registry publication is pending.
+- **Missing colors:** import token CSS (or `full.css`) and check theme scope.
+- **Dark modal uses light colors:** put `data-theme` on an ancestor of the dialog, preferably `<html>`.
+- **`<vs-*>` elements do nothing:** import `@villetacore/velessoft-elements` once in the browser; in Vue/Angular register custom elements as described in the framework guide.
+- **Labels in Russian:** wrap the React app in `<VelessoftProvider messages={en}>`.
 - **No dialog:** use a modern browser supporting `HTMLDialogElement.showModal()`.
-- **Demo data disappeared:** the React example intentionally uses in-memory state.

@@ -1,0 +1,210 @@
+/* Form fields and choice controls */
+.vs-field {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 16px;
+  min-width: 0;
+  border: 0;
+  padding: 0;
+}
+.vs-field > label,
+.vs-field > legend,
+.vs-label {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 0;
+}
+.vs-field small,
+.vs-hint {
+  color: var(--vs-muted);
+  font-size: 12px;
+}
+.vs-field .vs-error,
+.vs-field-error {
+  color: var(--vs-error);
+}
+.vs-input {
+  width: 100%;
+  min-height: var(--vs-control-height);
+  padding: 7px 10px;
+  font: inherit;
+  color: var(--vs-text);
+  background: var(--vs-surface);
+  border: 1px solid var(--vs-border);
+  border-radius: var(--vs-radius-control);
+  box-sizing: border-box;
+}
+.vs-input::placeholder {
+  color: var(--vs-muted);
+}
+.vs-input:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+.vs-input[aria-invalid="true"] {
+  border-color: var(--vs-error);
+}
+textarea.vs-input {
+  resize: vertical;
+  min-height: 72px;
+}
+select.vs-input {
+  appearance: none;
+  padding-right: 32px;
+  background-image:
+    linear-gradient(45deg, transparent 50%, currentColor 50%),
+    linear-gradient(135deg, currentColor 50%, transparent 50%);
+  background-position:
+    calc(100% - 15px) 50%,
+    calc(100% - 10px) 50%;
+  background-size: 5px 5px;
+  background-repeat: no-repeat;
+}
+.vs-input-group {
+  display: flex;
+  align-items: stretch;
+}
+.vs-input-group > .vs-input {
+  flex: 1;
+  min-width: 0;
+}
+.vs-input-group > * + * {
+  margin-left: -1px;
+}
+.vs-input-addon {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 10px;
+  font: 12px var(--vs-font-mono);
+  color: var(--vs-muted);
+  background: var(--vs-surface-muted);
+  border: 1px solid var(--vs-border);
+}
+.vs-checkbox,
+.vs-radio {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: var(--vs-control-height);
+  cursor: pointer;
+}
+.vs-checkbox input,
+.vs-radio input {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  accent-color: var(--vs-link);
+  flex: none;
+}
+.vs-checkbox:has(input:disabled),
+.vs-radio:has(input:disabled),
+.vs-switch:has(input:disabled) {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+.vs-radio-group {
+  display: grid;
+  gap: 2px;
+}
+.vs-radio-group.vs-horizontal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 20px;
+}
+/* Switch: <label class="vs-switch"><input type="checkbox" role="switch"><span class="vs-switch-track"></span>Label</label> */
+.vs-switch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: var(--vs-control-height);
+  cursor: pointer;
+}
+.vs-switch input {
+  position: absolute;
+  opacity: 0;
+  width: 36px;
+  height: 20px;
+  margin: 0;
+  cursor: inherit;
+}
+.vs-switch-track {
+  position: relative;
+  width: 36px;
+  height: 20px;
+  flex: none;
+  background: var(--vs-surface-muted);
+  border: 1px solid var(--vs-border);
+  transition: background var(--vs-motion-fast);
+}
+.vs-switch-track::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 14px;
+  height: 14px;
+  background: var(--vs-text);
+  transition: transform var(--vs-motion-fast);
+}
+.vs-switch input:checked + .vs-switch-track {
+  background: var(--vs-primary);
+  border-color: var(--vs-brand-graphite);
+}
+.vs-switch input:checked + .vs-switch-track::after {
+  transform: translateX(16px);
+  background: var(--vs-brand-graphite);
+}
+/* Slider */
+.vs-slider {
+  width: 100%;
+  height: var(--vs-control-height);
+  margin: 0;
+  background: transparent;
+  accent-color: var(--vs-link);
+  appearance: none;
+  cursor: pointer;
+}
+.vs-slider::-webkit-slider-runnable-track {
+  height: 4px;
+  background: var(--vs-border);
+}
+.vs-slider::-moz-range-track {
+  height: 4px;
+  background: var(--vs-border);
+}
+.vs-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  margin-top: -6px;
+  background: var(--vs-primary);
+  border: 1px solid var(--vs-brand-graphite);
+  box-shadow: var(--vs-shadow-offset) var(--vs-accent);
+}
+.vs-slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 0;
+  background: var(--vs-primary);
+  border: 1px solid var(--vs-brand-graphite);
+  box-shadow: var(--vs-shadow-offset) var(--vs-accent);
+}
+.vs-slider:focus-visible {
+  outline: 2px solid var(--vs-link);
+  outline-offset: 2px;
+}
+.vs-slider-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+.vs-slider-header output {
+  font: 12px var(--vs-font-mono);
+  color: var(--vs-muted);
+}
+@media (pointer: coarse) {
+  .vs-input {
+    font-size: 16px;
+  }
+}

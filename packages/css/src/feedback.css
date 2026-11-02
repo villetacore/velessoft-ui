@@ -1,0 +1,235 @@
+/* Feedback: badge, tag, alert, spinner, progress, skeleton, toast */
+.vs-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 7px;
+  font: 11px/1.4 var(--vs-font-mono);
+  color: var(--vs-tone, currentColor);
+  border: 1px solid currentColor;
+  white-space: nowrap;
+}
+.vs-badge.vs-solid {
+  color: var(--vs-brand-graphite);
+  background: var(--vs-tone, var(--vs-primary));
+  border-color: var(--vs-brand-graphite);
+}
+.vs-badge.vs-solid.vs-neutral {
+  background: var(--vs-surface-muted);
+  color: var(--vs-text);
+  border-color: var(--vs-border);
+}
+.vs-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: var(--vs-tone, var(--vs-muted));
+  flex: none;
+}
+.vs-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 26px;
+  padding: 2px 4px 2px 8px;
+  font-size: 12px;
+  background: var(--vs-surface-muted);
+  border: 1px solid var(--vs-border);
+  border-left: 3px solid var(--vs-tone, var(--vs-accent));
+}
+.vs-tag:not(:has(button)) {
+  padding-right: 8px;
+}
+.vs-tag button {
+  display: inline-grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  font: inherit;
+  line-height: 1;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+.vs-tag button:hover {
+  background: var(--vs-surface);
+}
+.vs-tag button:focus-visible {
+  outline: 2px solid var(--vs-link);
+}
+.vs-alert {
+  display: grid;
+  gap: 2px;
+  padding: 12px 16px;
+  margin: 12px 0;
+  color: var(--vs-text);
+  background: var(--vs-surface);
+  border: 1px solid var(--vs-border);
+  border-left: 3px solid var(--vs-tone, var(--vs-link));
+}
+.vs-alert > strong {
+  color: var(--vs-tone, var(--vs-text));
+}
+.vs-alert-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+.vs-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--vs-border);
+  border-top-color: var(--vs-accent);
+  border-right-color: var(--vs-primary);
+  animation: vs-spin 700ms linear infinite;
+  vertical-align: middle;
+  flex: none;
+}
+.vs-spinner.vs-lg {
+  width: 28px;
+  height: 28px;
+  border-width: 3px;
+}
+@keyframes vs-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.vs-progress {
+  display: grid;
+  gap: 6px;
+}
+.vs-progress-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 12px;
+}
+.vs-progress-label span:last-child {
+  font-family: var(--vs-font-mono);
+  color: var(--vs-muted);
+}
+.vs-progress-track {
+  height: 8px;
+  background: var(--vs-surface-muted);
+  border: 1px solid var(--vs-border);
+  overflow: hidden;
+}
+.vs-progress-bar {
+  height: 100%;
+  width: var(--vs-value, 0%);
+  background: var(--vs-tone, var(--vs-primary));
+  transition: width var(--vs-motion-normal);
+}
+.vs-progress.vs-indeterminate .vs-progress-bar {
+  width: 35%;
+  animation: vs-indeterminate 1.1s ease-in-out infinite;
+}
+@keyframes vs-indeterminate {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(300%);
+  }
+}
+.vs-skeleton {
+  display: block;
+  height: 14px;
+  background: linear-gradient(
+    90deg,
+    var(--vs-surface-muted) 25%,
+    var(--vs-surface) 50%,
+    var(--vs-surface-muted) 75%
+  );
+  background-size: 300% 100%;
+  animation: vs-shimmer 1.4s ease-in-out infinite;
+}
+.vs-skeleton + .vs-skeleton {
+  margin-top: 8px;
+}
+.vs-skeleton.vs-circle {
+  border-radius: 50%;
+}
+@keyframes vs-shimmer {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+.vs-toaster {
+  position: fixed;
+  z-index: 1000;
+  right: 16px;
+  bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: min(360px, calc(100vw - 32px));
+  pointer-events: none;
+}
+.vs-toaster.vs-top {
+  top: 16px;
+  bottom: auto;
+}
+.vs-toast {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  gap: 4px 12px;
+  padding: 12px 12px 12px 14px;
+  background: var(--vs-brand-graphite);
+  color: var(--vs-brand-paper);
+  border: 1px solid var(--vs-brand-graphite);
+  border-left: 4px solid var(--vs-tone, var(--vs-primary));
+  box-shadow: 3px 3px 0 var(--vs-accent);
+  pointer-events: auto;
+  animation: vs-toast-in var(--vs-motion-normal) ease-out;
+}
+.vs-toast.vs-success {
+  --vs-tone: #9de1ae;
+}
+.vs-toast.vs-error {
+  --vs-tone: #ff9ca7;
+}
+.vs-toast.vs-warning {
+  --vs-tone: #f4ca80;
+}
+.vs-toast.vs-info {
+  --vs-tone: #b6aaff;
+}
+.vs-toast strong {
+  font-size: 13px;
+}
+.vs-toast p {
+  grid-column: 1;
+  margin: 0;
+  font-size: 13px;
+  color: #b8c0cd;
+}
+.vs-toast > button {
+  grid-row: 1 / span 2;
+  grid-column: 2;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+}
+.vs-toast > button:focus-visible {
+  outline: 2px solid var(--vs-primary);
+}
+@keyframes vs-toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}

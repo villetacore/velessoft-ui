@@ -1,35 +1,57 @@
-# Releasing
+# Publishing
 
 [Documentation](README.md) / Releasing
 
-Maintainer: **villetacore**. Never commit credentials.
+Maintainer: **villetacore**. Four packages are released together with one version:
 
-## Create packages
+| Order | Package |
+| --- | --- |
+| 1 | `@villetacore/velessoft-tokens` |
+| 2 | `@villetacore/velessoft-css` |
+| 3 | `@villetacore/velessoft-elements` |
+| 4 | `@villetacore/velessoft-ui` |
+
+The list lives in [`scripts/packages.mjs`](../scripts/packages.mjs) and drives pack, validation and publish scripts.
+
+## One-time npm setup
+
+npm trusted publishing (OIDC, no tokens) requires that a package already exists. A maintainer publishes the first version from their own logged-in npm account, completing any 2FA challenge themselves:
 
 ```sh
-npm ci
+npm login
 npm run check
-npm run pack
+npm publish -w @villetacore/velessoft-tokens --access public
+npm publish -w @villetacore/velessoft-css --access public
+npm publish -w @villetacore/velessoft-elements --access public
+npm publish -w @villetacore/velessoft-ui --access public
 ```
 
-Inspect archives with `tar -tzf artifacts/velessoft-ui-0.1.0.tgz`. Install both archives into a fresh consumer and verify imports and type declarations. The UI package has React/React DOM peer dependencies; fonts and design-catalog images are not included.
-
-## GitHub archive distribution
-
-Versioned archives live in `releases/v0.1.0/` with SHA-256 checksums. Treat released archives as immutable. Future changes get a new package version and directory. These are repository-hosted archives, not a GitHub Release page or npm registry release.
-
-## npm registry publication
-
-Publication requires a logged-in maintainer with rights to the `@velessoft` scope. Authentication and any 2FA challenge must be completed by the maintainer.
+Then connect each package to the workflow (CLI or npmjs.com → package → Settings → Trusted Publisher: owner `villetacore`, repository `velessoft-ui`, workflow `publish.yml`, no environment):
 
 ```sh
-npm whoami
-npm publish -w @velessoft/tokens --access public
-npm publish -w @velessoft/ui --access public
+for p in tokens css elements ui; do
+  npm trust github @villetacore/velessoft-$p --repo villetacore/velessoft-ui --file publish.yml --allow-publish
+done
 ```
 
-Workspace prepack scripts regenerate/build packages before publication. Verify both package versions in the registry, then update the README installation section. Do not claim npm publication before verification.
+The `@villetacore` scope must belong to the npm account (a user named `villetacore` or an organization). Never commit a token or paste one in an issue.
 
-## Signed commits
+## GitHub Pages demo
 
-Keep maintainer commits authored and signed by villetacore. GitHub Verified also requires the signing public key to be registered on that account. Contributors retain their own authorship.
+`.github/workflows/pages.yml` builds the React demo, the HTML example and the design catalog on every push to `main`. Enable it once: repository **Settings → Pages → Source: GitHub Actions**. The site appears at `https://villetacore.github.io/velessoft-ui/`.
+
+## Each release
+
+1. Bump `version` in the root and all four `packages/*/package.json` (and the `^0.x` peer ranges in css/elements), update `CHANGELOG.md`, run `npm install` to refresh the lockfile.
+2. Run `npm run check` and `npm run verify:packages`; push.
+3. Create a GitHub Release with tag `vMAJOR.MINOR.PATCH` matching the package versions and publish it.
+4. `.github/workflows/publish.yml` validates the tag, tests, builds, verifies the archives and publishes to npm with provenance.
+5. Check the Actions run and the npm package pages before announcing.
+
+Prereleases do not trigger publication. Existing versions are skipped, so a partially failed run can be retried. A registry error other than 404 stops publication.
+
+## Local package inspection
+
+`npm run pack` writes archives to `artifacts/`. Inspect with `tar -tzf artifacts/villetacore-velessoft-ui-0.2.0.tgz`. Files in `releases/v0.1.0/` are historical archives with the original `@velessoft` scope and stay immutable.
+
+Sources: [npm trusted publishing](https://docs.npmjs.com/trusted-publishers/), [npm trust](https://docs.npmjs.com/cli/v11/commands/npm-trust/).

@@ -17,6 +17,7 @@
   },
   "include": [
     "packages/ui/src",
+    "packages/elements/src",
     "examples",
     "tests"
   ]

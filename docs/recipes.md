@@ -6,7 +6,7 @@
 
 ```tsx
 import { useState } from 'react';
-import { Alert, Button, Input } from '@velessoft/ui';
+import { Alert, Button, Input } from '@villetacore/velessoft-ui';
 
 export function ProjectForm() {
   const [name, setName] = useState('');
@@ -42,7 +42,7 @@ For network submission, use loading state, catch errors, preserve input and only
 
 ```tsx
 import { useState } from 'react';
-import { Button, Dialog } from '@velessoft/ui';
+import { Button, Dialog } from '@villetacore/velessoft-ui';
 
 export function Details() {
   const [open, setOpen] = useState(false);
@@ -60,7 +60,7 @@ export function Details() {
 
 ```tsx
 import { useState } from 'react';
-import { Button } from '@velessoft/ui';
+import { Button } from '@villetacore/velessoft-ui';
 
 export function ThemeExample() {
   const [dark, setDark] = useState(false);

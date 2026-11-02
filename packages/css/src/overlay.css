@@ -1,0 +1,191 @@
+/* Overlays: dialog, drawer, tooltip, menu, popover */
+.vs-dialog {
+  width: min(480px, calc(100vw - 32px));
+  max-height: 85vh;
+  padding: 24px;
+  font: inherit;
+  color: var(--vs-text);
+  background: var(--vs-surface);
+  border: 1px solid var(--vs-border);
+  border-top: 4px solid var(--vs-accent);
+  border-radius: var(--vs-radius-card);
+  box-sizing: border-box;
+}
+.vs-dialog.vs-sm {
+  width: min(360px, calc(100vw - 32px));
+}
+.vs-dialog.vs-lg {
+  width: min(720px, calc(100vw - 32px));
+}
+.vs-dialog::backdrop {
+  background: var(--vs-overlay);
+}
+.vs-dialog-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.vs-dialog h2 {
+  font-size: 20px;
+  margin: 0;
+}
+.vs-dialog-footer {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+}
+.vs-drawer {
+  position: fixed;
+  inset: 0 0 0 auto;
+  width: min(400px, 100vw);
+  max-width: 100vw;
+  height: 100%;
+  max-height: 100%;
+  margin: 0;
+  border-top: 1px solid var(--vs-border);
+  border-left: 4px solid var(--vs-accent);
+  animation: vs-drawer-in var(--vs-motion-normal) ease-out;
+}
+.vs-drawer.vs-left {
+  inset: 0 auto 0 0;
+  border-left: 1px solid var(--vs-border);
+  border-right: 4px solid var(--vs-accent);
+  --vs-drawer-from: -100%;
+}
+@keyframes vs-drawer-in {
+  from {
+    transform: translateX(var(--vs-drawer-from, 100%));
+  }
+}
+.vs-tooltip-anchor {
+  position: relative;
+  display: inline-flex;
+}
+.vs-tooltip {
+  position: absolute;
+  z-index: 900;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: 260px;
+  padding: 5px 8px;
+  font: 12px/1.4 var(--vs-font-mono);
+  color: var(--vs-brand-paper);
+  background: var(--vs-brand-graphite);
+  border: 1px solid var(--vs-accent);
+  pointer-events: none;
+}
+.vs-tooltip[data-placement="bottom"] {
+  top: calc(100% + 8px);
+  bottom: auto;
+}
+.vs-tooltip[data-placement="right"] {
+  left: calc(100% + 8px);
+  bottom: auto;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.vs-tooltip[data-placement="left"] {
+  left: auto;
+  right: calc(100% + 8px);
+  bottom: auto;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.vs-tooltip[hidden] {
+  display: none;
+}
+.vs-menu-anchor {
+  position: relative;
+  display: inline-block;
+}
+.vs-menu,
+.vs-popover {
+  position: absolute;
+  z-index: 900;
+  top: calc(100% + 4px);
+  left: 0;
+  min-width: 180px;
+  padding: 4px;
+  color: var(--vs-text);
+  background: var(--vs-surface);
+  border: 1px solid var(--vs-border);
+  box-shadow: 3px 3px 0 var(--vs-accent);
+}
+.vs-menu[data-align="end"],
+.vs-popover[data-align="end"] {
+  left: auto;
+  right: 0;
+}
+.vs-menu[hidden],
+.vs-popover[hidden] {
+  display: none;
+}
+.vs-popover {
+  padding: 12px;
+  min-width: 220px;
+}
+.vs-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 32px;
+  padding: 6px 10px;
+  font: inherit;
+  font-size: 13px;
+  text-align: left;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  text-decoration: none;
+}
+.vs-menu-item:hover,
+.vs-menu-item:focus-visible {
+  background: var(--vs-primary);
+  color: var(--vs-on-primary);
+  outline-offset: -2px;
+}
+.vs-menu-item.vs-danger {
+  color: var(--vs-error);
+}
+.vs-menu-item.vs-danger:hover,
+.vs-menu-item.vs-danger:focus-visible {
+  background: var(--vs-error);
+  color: var(--vs-surface);
+}
+.vs-menu-item:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: transparent;
+  color: inherit;
+}
+.vs-menu-item kbd {
+  margin-left: auto;
+  font: 11px var(--vs-font-mono);
+  color: var(--vs-muted);
+}
+.vs-menu-separator {
+  height: 1px;
+  margin: 4px 0;
+  background: var(--vs-border);
+  border: 0;
+}
+.vs-menu-label {
+  padding: 6px 10px 2px;
+  font: 10px var(--vs-font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--vs-muted);
+}
+@media (pointer: coarse) {
+  .vs-menu-item {
+    min-height: 44px;
+  }
+}

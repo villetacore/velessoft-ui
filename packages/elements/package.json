@@ -1,0 +1,65 @@
+{
+  "name": "@villetacore/velessoft-elements",
+  "version": "0.2.0",
+  "description": "Dependency-free Web Components for Velessoft UI: tabs, dialog, menu, tooltip, toasts, pagination and theme toggle. Works in Vue, Svelte, Angular, Solid, Astro and plain HTML.",
+  "type": "module",
+  "author": "villetacore <villetacore@proton.me>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/villetacore/velessoft-ui.git",
+    "directory": "packages/elements"
+  },
+  "homepage": "https://github.com/villetacore/velessoft-ui#readme",
+  "bugs": {
+    "url": "https://github.com/villetacore/velessoft-ui/issues"
+  },
+  "files": [
+    "dist",
+    "LICENSE"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "unpkg": "./dist/index.js",
+  "jsdelivr": "./dist/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./*": {
+      "types": "./dist/*.d.ts",
+      "default": "./dist/*.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "sideEffects": true,
+  "peerDependencies": {
+    "@villetacore/velessoft-css": "^0.2.0"
+  },
+  "peerDependenciesMeta": {
+    "@villetacore/velessoft-css": {
+      "optional": true
+    }
+  },
+  "scripts": {
+    "build": "rm -rf dist && tsc -p tsconfig.json",
+    "prepack": "npm run build"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "keywords": [
+    "velessoft",
+    "design-system",
+    "web-components",
+    "custom-elements",
+    "vue",
+    "svelte",
+    "angular",
+    "solid",
+    "html"
+  ]
+}

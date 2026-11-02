@@ -1,34 +1,64 @@
 {
-  "name": "@velessoft/tokens",
-  "version": "0.1.0",
+  "name": "@villetacore/velessoft-tokens",
+  "version": "0.2.0",
+  "description": "Design tokens for Velessoft UI: CSS variables, SCSS, JS/JSON and Tailwind presets.",
   "type": "module",
   "author": "villetacore <villetacore@proton.me>",
   "license": "MIT",
-  "files": [
-    "tokens.json",
-    "tokens.css",
-    "LICENSE"
-  ],
-  "exports": {
-    "./tokens.json": "./tokens.json",
-    "./tokens.css": "./tokens.css"
-  },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/villetacore/velessoft-ui.git",
+    "directory": "packages/tokens"
   },
   "homepage": "https://github.com/villetacore/velessoft-ui#readme",
   "bugs": {
     "url": "https://github.com/villetacore/velessoft-ui/issues"
   },
-  "keywords": [
-    "velessoft",
-    "design-system",
-    "ui",
-    "react",
-    "typescript"
+  "files": [
+    "tokens.json",
+    "tokens.css",
+    "tokens.scss",
+    "tokens.js",
+    "tokens.d.ts",
+    "tailwind.css",
+    "tailwind-preset.js",
+    "tailwind-preset.cjs",
+    "LICENSE"
+  ],
+  "main": "./tokens.js",
+  "types": "./tokens.d.ts",
+  "exports": {
+    ".": {
+      "types": "./tokens.d.ts",
+      "default": "./tokens.js"
+    },
+    "./tokens.css": "./tokens.css",
+    "./tokens.scss": "./tokens.scss",
+    "./tokens.json": "./tokens.json",
+    "./tailwind.css": "./tailwind.css",
+    "./tailwind-preset": {
+      "import": "./tailwind-preset.js",
+      "require": "./tailwind-preset.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "style": "./tokens.css",
+  "sideEffects": [
+    "*.css"
   ],
   "scripts": {
     "prepack": "node ../../scripts/build-tokens.mjs"
-  }
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "keywords": [
+    "velessoft",
+    "design-system",
+    "design-tokens",
+    "css-variables",
+    "tailwind",
+    "scss"
+  ]
 }

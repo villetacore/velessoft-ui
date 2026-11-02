@@ -1,7 +1,7 @@
 {
-  "name": "@velessoft/ui",
-  "version": "0.1.0",
-  "description": "Compact, punk-inspired React components by villetacore.",
+  "name": "@villetacore/velessoft-ui",
+  "version": "0.2.0",
+  "description": "Compact, punk-inspired React components by villetacore: 35+ accessible, typed components.",
   "type": "module",
   "author": "villetacore <villetacore@proton.me>",
   "license": "MIT",
@@ -17,9 +17,12 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
     },
-    "./styles.css": "./dist/styles.css"
+    "./styles.css": "./dist/styles.css",
+    "./full.css": "./dist/full.css",
+    "./package.json": "./package.json"
   },
   "sideEffects": [
     "**/*.css"
@@ -29,8 +32,8 @@
     "react-dom": ">=18"
   },
   "scripts": {
-    "build": "tsc -p tsconfig.json && cp src/styles.css dist/styles.css",
-    "prepack": "npm run build"
+    "build": "rm -rf dist && tsc -p tsconfig.json && node ../../scripts/build-css.mjs && cp ../css/dist/velessoft.css dist/styles.css && cp ../css/dist/velessoft.full.css dist/full.css",
+    "prepack": "node ../../scripts/build-tokens.mjs && npm run build"
   },
   "publishConfig": {
     "access": "public",
@@ -45,6 +48,12 @@
     "design-system",
     "ui",
     "react",
-    "typescript"
-  ]
+    "react-components",
+    "typescript",
+    "accessible",
+    "component-library"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts"
 }

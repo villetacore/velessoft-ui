@@ -2,40 +2,44 @@
 
 <p align="center">
 <a href="https://github.com/villetacore/velessoft-ui/actions/workflows/ci.yml"><img src="https://github.com/villetacore/velessoft-ui/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+<a href="https://www.npmjs.com/package/@villetacore/velessoft-ui"><img src="https://img.shields.io/npm/v/@villetacore/velessoft-ui?style=flat-square&labelColor=171B24&color=B8EF65" alt="npm"></a>
 <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-B8EF65?style=flat-square&labelColor=171B24" alt="MIT license"></a>
 <img src="https://img.shields.io/badge/status-experimental-8B7CF6?style=flat-square&labelColor=171B24" alt="Experimental">
 </p>
 
-<p align="center"><a href="docs/README.md">Documentation</a> · <a href="docs/getting-started.md">Quick start</a> · <a href="docs/components.md">Components</a> · <a href="docs/gallery.md">Screenshots</a> · <a href="README.ru.md">Русский</a></p>
+<p align="center"><a href="https://villetacore.github.io/velessoft-ui/">Live demo</a> · <a href="docs/README.md">Documentation</a> · <a href="docs/getting-started.md">Quick start</a> · <a href="docs/components.md">Components</a> · <a href="docs/frameworks.md">Frameworks</a> · <a href="README.ru.md">Русский</a></p>
 
-**A compact React component library and open design system by [villetacore](https://github.com/villetacore).** Lime, violet and graphite. Sharp geometry, readable working surfaces, native controls.
+**A compact design system and component library by [villetacore](https://github.com/villetacore) that works in any stack.** Lime, violet and graphite. Sharp geometry, readable working surfaces, native controls.
 
 ![Dark workspace built with Velessoft UI](docs/images/dashboard-dark.jpg)
 
-## What is inside
+## Packages
 
-| Layer | What you get |
+| Package | Use it for |
 | --- | --- |
-| **React library** | Eight typed components, forwarded field refs, linked labels and error descriptions. |
-| **Theme tokens** | JSON source and generated CSS variables for light and dark themes. |
-| **Design catalog** | Brand rules, screen patterns, state laboratory and a local CRUD prototype. |
-| **Working example** | A React workspace with project creation, search, validation and theme switching. |
+| [`@villetacore/velessoft-ui`](packages/ui) | **React 18+** — 35+ typed, accessible components. Works with Next.js (App Router), Remix, Vite. |
+| [`@villetacore/velessoft-elements`](packages/elements) | **Web Components** for interactive parts (tabs, dialog, menu, tooltip, toasts, pagination, theme toggle). Works in **Vue, Svelte, Angular, Solid, Astro, Lit, htmx and plain HTML**. No dependencies. |
+| [`@villetacore/velessoft-css`](packages/css) | **Framework-agnostic CSS** — every component as `vs-*` classes. ~5 kB gzip. CDN-ready. |
+| [`@villetacore/velessoft-tokens`](packages/tokens) | **Design tokens** — CSS variables, SCSS, JSON/JS with types, Tailwind v3 preset and Tailwind v4 theme. |
 
-**0.1.0 is experimental.** APIs may change. This is a small foundation, not a complete application framework or an accessibility certification.
-
-## Install the library
-
-The public GitHub package archives are installable with npm. An npm-registry release is not yet available.
+## Install
 
 ```sh
-npm install react react-dom
-npm install https://raw.githubusercontent.com/villetacore/velessoft-ui/main/releases/v0.1.0/velessoft-tokens-0.1.0.tgz https://raw.githubusercontent.com/villetacore/velessoft-ui/main/releases/v0.1.0/velessoft-ui-0.1.0.tgz
+# React
+npm install @villetacore/velessoft-ui @villetacore/velessoft-tokens
+
+# Vue / Svelte / Angular / Solid / HTML
+npm install @villetacore/velessoft-css @villetacore/velessoft-tokens @villetacore/velessoft-elements
 ```
 
+> **npm status:** the packages are configured for publication through GitHub Actions. Until the first release is published, build archives locally with `npm run pack` — see [releasing](docs/releasing.md).
+
+### React
+
 ```tsx
-import { Button, Input } from '@velessoft/ui';
-import '@velessoft/tokens/tokens.css';
-import '@velessoft/ui/styles.css';
+import { Button, Input, ToastProvider, useToast } from '@villetacore/velessoft-ui';
+import '@villetacore/velessoft-tokens/tokens.css';
+import '@villetacore/velessoft-ui/styles.css';
 
 export function ProjectForm() {
   return (
@@ -47,11 +51,38 @@ export function ProjectForm() {
 }
 ```
 
-For validated, controlled forms see [recipes](docs/recipes.md). Scope dark mode with `<div data-theme="dark">`.
+### Any framework or plain HTML (no build step)
+
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@villetacore/velessoft-css@0.2/dist/velessoft.full.min.css">
+<script type="module" src="https://cdn.jsdelivr.net/npm/@villetacore/velessoft-elements@0.2/dist/index.js"></script>
+
+<body class="vs-root" data-theme="dark">
+  <button class="vs-button vs-primary">Create project</button>
+  <vs-tooltip text="Copy link"><button class="vs-button" aria-label="Copy">⧉</button></vs-tooltip>
+</body>
+```
+
+Vue, Svelte, Angular, Solid, Astro and Tailwind setup: **[framework guide →](docs/frameworks.md)**
+
+## Components
+
+| Group | React components | CSS classes / Web Components |
+| --- | --- | --- |
+| **Actions** | Button, IconButton, ButtonGroup | `vs-button`, `vs-icon-button`, `vs-button-group` |
+| **Forms** | Input (with addons), Textarea, Select, Checkbox, Switch, RadioGroup, Slider | `vs-field`, `vs-input`, `vs-input-group`, `vs-checkbox`, `vs-switch`, `vs-radio`, `vs-slider` |
+| **Feedback** | Alert, Badge, Tag, Spinner, Progress, Skeleton, ToastProvider + useToast | `vs-alert`, `vs-badge`, `vs-tag`, `vs-spinner`, `vs-progress`, `vs-skeleton`, `<vs-toaster>` |
+| **Overlays** | Dialog, Drawer, Tooltip, Menu | `<vs-dialog>`, `vs-drawer`, `<vs-tooltip>`, `<vs-menu>`, `vs-popover` |
+| **Navigation** | Tabs, SegmentedControl, Breadcrumbs, Pagination | `<vs-tabs>`, `vs-segmented`, `vs-breadcrumbs`, `<vs-pagination>`, `vs-nav-list` |
+| **Display** | Card, Table (sortable), Accordion, Avatar, AvatarGroup, Stat, EmptyState, Kbd, Divider | `vs-card`, `vs-table`, `vs-accordion`, `vs-avatar`, `vs-stat`, `vs-empty-state`, `vs-kbd`, `vs-divider` |
+| **Layout** | Stack, Grid | `vs-stack`, `vs-grid`, `vs-root` |
+| **Theming** | VelessoftProvider (localized labels, `ru`/`en`) | `<vs-theme-toggle>`, `data-theme="light \| dark \| auto"` |
+
+Controls start at 34px on desktop and 44px on coarse pointers. Everything uses `--vs-*` tokens. [API reference →](docs/components.md)
 
 ## Explore locally
 
-Use **Node.js 22.12+ on the 22 LTS line**, or Node 24/26, and npm.
+Use **Node.js 22.12+**, 24 or 26.
 
 ```sh
 git clone https://github.com/villetacore/velessoft-ui.git
@@ -60,11 +91,12 @@ npm ci
 npm run dev
 ```
 
-Open the address printed by Vite. Follow **Дизайн-каталог ↗** to open the offline design guide. React demo data lives in memory; the catalog's separate prototype uses localStorage when available.
+The root page is the React workspace; `/examples/html/` is the same system with only CSS + Web Components; `/public/` is the offline design catalog.
 
 ```sh
-npm run check    # TypeScript, interaction tests, production build
-npm run pack     # Build installable packages in artifacts/
+npm run check            # TypeScript, interaction tests, package + demo builds
+npm run verify:packages  # pack all packages and import them from a clean consumer
+npm run pack             # installable archives in artifacts/
 ```
 
 ## One system, two themes
@@ -75,22 +107,17 @@ npm run pack     # Build installable packages in artifacts/
 
 [View the full gallery →](docs/gallery.md)
 
-## Components
-
-**Button · Input · Textarea · Select · Checkbox · Badge · Alert · Dialog**
-
-Controls start at 34px on desktop and 44px on coarse pointers. Components inherit your font and use `--vs-*` semantic tokens. [API reference →](docs/components.md)
-
 ## Repository map
 
 ```text
-packages/ui/          React source, scoped CSS, type declarations
-packages/tokens/      Token source + generated CSS
+packages/ui/          React components (TypeScript, ESM, "use client")
+packages/elements/    Web Components (no dependencies, light DOM)
+packages/css/         Framework-agnostic component CSS
+packages/tokens/      Token source + generated CSS / SCSS / JS / Tailwind
+examples/dashboard/   React example
+examples/html/        CSS + Web Components example
 apps/docs/public/     Offline design catalog
-examples/dashboard/  Real React example
- docs/                Guides, recipes and screenshots
- design/              Principles and delivery templates
- releases/v0.1.0/     Installable package archives + checksums
+docs/                 Guides, recipes and screenshots
 ```
 
 ## Contribute

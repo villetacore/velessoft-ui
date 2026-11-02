@@ -1,0 +1,289 @@
+/* Display and layout: card, stack, divider, avatar, kbd, table, accordion, stat, empty state */
+.vs-card {
+  display: grid;
+  gap: 12px;
+  padding: var(--vs-panel-padding);
+  color: var(--vs-text);
+  background: var(--vs-surface);
+  border: 1px solid var(--vs-border);
+  border-top: 3px solid var(--vs-tone, var(--vs-accent));
+  border-radius: var(--vs-radius-card);
+  min-width: 0;
+}
+.vs-card.vs-flat {
+  border-top-width: 1px;
+  border-top-color: var(--vs-border);
+}
+.vs-card.vs-interactive {
+  cursor: pointer;
+  transition:
+    transform var(--vs-motion-fast),
+    box-shadow var(--vs-motion-fast);
+}
+.vs-card.vs-interactive:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 var(--vs-accent);
+}
+.vs-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+.vs-card-header h3 {
+  margin: 0;
+  font-size: var(--vs-font-size-h3);
+  letter-spacing: -0.02em;
+}
+.vs-card-header p {
+  margin: 2px 0 0;
+  font-size: 13px;
+  color: var(--vs-muted);
+}
+.vs-card-footer {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  padding-top: 12px;
+  border-top: 1px dashed var(--vs-border);
+}
+.vs-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--vs-stack-gap, 12px);
+}
+.vs-stack.vs-row {
+  flex-direction: row;
+}
+.vs-stack.vs-wrap {
+  flex-wrap: wrap;
+}
+.vs-grid {
+  display: grid;
+  gap: var(--vs-stack-gap, 12px);
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(var(--vs-grid-min, 220px), 1fr)
+  );
+}
+.vs-divider {
+  height: 0;
+  margin: 16px 0;
+  border: 0;
+  border-top: 1px solid var(--vs-border);
+}
+.vs-divider.vs-vertical {
+  align-self: stretch;
+  width: 0;
+  height: auto;
+  margin: 0 8px;
+  border-top: 0;
+  border-left: 1px solid var(--vs-border);
+}
+.vs-divider-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 16px 0;
+  font: 11px var(--vs-font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--vs-muted);
+}
+.vs-divider-label::before,
+.vs-divider-label::after {
+  content: "";
+  flex: 1;
+  border-top: 1px solid var(--vs-border);
+}
+.vs-avatar {
+  display: inline-grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  flex: none;
+  overflow: hidden;
+  font: 700 12px var(--vs-font-mono);
+  text-transform: uppercase;
+  color: var(--vs-brand-graphite);
+  background: var(--vs-tone, var(--vs-accent));
+  border: 1px solid var(--vs-brand-graphite);
+}
+.vs-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.vs-avatar.vs-sm {
+  width: 24px;
+  height: 24px;
+  font-size: 10px;
+}
+.vs-avatar.vs-lg {
+  width: 48px;
+  height: 48px;
+  font-size: 16px;
+}
+.vs-avatar.vs-round {
+  border-radius: 50%;
+}
+.vs-avatar-group {
+  display: inline-flex;
+}
+.vs-avatar-group > .vs-avatar + .vs-avatar {
+  margin-left: -8px;
+}
+.vs-kbd {
+  display: inline-block;
+  min-width: 20px;
+  padding: 1px 5px;
+  font: 11px/1.5 var(--vs-font-mono);
+  text-align: center;
+  color: var(--vs-text);
+  background: var(--vs-surface-muted);
+  border: 1px solid var(--vs-border);
+  border-bottom-width: 2px;
+}
+.vs-code {
+  padding: 1px 4px;
+  font: 0.92em var(--vs-font-mono);
+  background: var(--vs-surface-muted);
+}
+.vs-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--vs-border);
+}
+.vs-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  text-align: left;
+}
+.vs-table caption {
+  padding: 8px 10px;
+  font-weight: 700;
+  text-align: left;
+}
+.vs-table th {
+  padding: 8px 10px;
+  font: 11px var(--vs-font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--vs-muted);
+  background: var(--vs-surface);
+  border-bottom: 2px solid var(--vs-accent);
+  white-space: nowrap;
+}
+.vs-table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--vs-border);
+  vertical-align: middle;
+}
+.vs-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+.vs-table.vs-striped tbody tr:nth-child(even) {
+  background: var(--vs-surface-muted);
+}
+.vs-table.vs-hover tbody tr:hover {
+  background: var(--vs-surface-muted);
+}
+.vs-table.vs-compact td,
+.vs-table.vs-compact th {
+  padding: 4px 8px;
+}
+.vs-table .vs-numeric {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.vs-table th button {
+  padding: 0;
+  font: inherit;
+  text-transform: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+.vs-accordion {
+  border-top: 1px solid var(--vs-border);
+}
+.vs-accordion details {
+  border-bottom: 1px solid var(--vs-border);
+}
+.vs-accordion summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 44px;
+  padding: 8px 4px;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+}
+.vs-accordion summary::-webkit-details-marker {
+  display: none;
+}
+.vs-accordion summary::after {
+  content: "+";
+  font: 18px var(--vs-font-mono);
+  color: var(--vs-accent);
+  transition: transform var(--vs-motion-fast);
+}
+.vs-accordion details[open] summary::after {
+  transform: rotate(45deg);
+}
+.vs-accordion-content {
+  padding: 0 4px 16px;
+  color: var(--vs-muted);
+}
+.vs-stat {
+  display: grid;
+  gap: 2px;
+}
+.vs-stat-label {
+  font: 11px var(--vs-font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--vs-muted);
+}
+.vs-stat-value {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+.vs-stat-delta {
+  font: 12px var(--vs-font-mono);
+  color: var(--vs-tone, var(--vs-muted));
+}
+.vs-empty-state {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  padding: 40px 24px;
+  text-align: center;
+  border: 1px dashed var(--vs-border);
+}
+.vs-empty-state-icon {
+  font: 28px var(--vs-font-mono);
+  color: var(--vs-accent);
+}
+.vs-empty-state h3 {
+  margin: 0;
+  font-size: var(--vs-font-size-h3);
+}
+.vs-empty-state p {
+  max-width: 420px;
+  margin: 0;
+  color: var(--vs-muted);
+}
+.vs-empty-state-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}

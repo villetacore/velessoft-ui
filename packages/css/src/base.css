@@ -1,0 +1,75 @@
+/* Base: opt-in page styles and shared tone modifiers. */
+.vs-root {
+  background: var(--vs-bg);
+  color: var(--vs-text);
+  font-family: var(--vs-font-family);
+  font-size: var(--vs-font-size-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+.vs-root *,
+.vs-root *::before,
+.vs-root *::after {
+  box-sizing: border-box;
+}
+.vs-neutral {
+  --vs-tone: var(--vs-muted);
+}
+.vs-info {
+  --vs-tone: var(--vs-info);
+}
+.vs-success {
+  --vs-tone: var(--vs-success);
+}
+.vs-warning {
+  --vs-tone: var(--vs-warning);
+}
+.vs-error {
+  --vs-tone: var(--vs-error);
+}
+.vs-accent {
+  --vs-tone: var(--vs-accent);
+}
+.vs-visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+.vs-focus-ring:focus-visible,
+.vs-button:focus-visible,
+.vs-input:focus-visible,
+.vs-tab:focus-visible,
+.vs-menu-item:focus-visible,
+.vs-accordion summary:focus-visible,
+.vs-pagination button:focus-visible,
+.vs-checkbox input:focus-visible,
+.vs-radio input:focus-visible,
+.vs-switch input:focus-visible + .vs-switch-track,
+.vs-segmented input:focus-visible + span,
+.vs-link:focus-visible {
+  outline: 2px solid var(--vs-link);
+  outline-offset: 3px;
+}
+.vs-link {
+  color: var(--vs-link);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.vs-link:hover {
+  text-decoration-thickness: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .vs-root *,
+  .vs-spinner,
+  .vs-skeleton,
+  .vs-progress-bar {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

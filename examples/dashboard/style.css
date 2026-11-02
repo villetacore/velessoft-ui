@@ -12,7 +12,7 @@ body {
   background: var(--vs-bg);
   color: var(--vs-text);
 }
-header {
+.app > header {
   display: flex;
   align-items: center;
   gap: 24px;
@@ -21,7 +21,7 @@ header {
   background: #171b24;
   color: #f7f8f5;
 }
-header span {
+.app > header span {
   font: 11px monospace;
   color: #b8c0cd;
 }
@@ -59,27 +59,36 @@ small {
   flex: 1;
   margin: 0;
 }
+.toolbar {
+  align-items: end;
+}
+.stats {
+  margin: 24px 0 8px;
+  padding: 16px;
+  border: 1px solid var(--vs-border);
+  background: var(--vs-surface);
+}
+.intro a {
+  font: 12px monospace;
+}
 .project {
   display: flex;
   justify-content: space-between;
   padding: 14px 16px;
   border-bottom: 1px solid var(--vs-border);
 }
-section {
-  border-top: 3px solid #8b7cf6;
-}
 .samples {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 32px;
 }
-footer {
+main > footer {
   margin-top: 48px;
   font: 12px monospace;
   color: var(--vs-muted);
 }
 @media (max-width: 600px) {
-  header,
+  .app > header,
   .intro,
   .toolbar {
     flex-wrap: wrap;

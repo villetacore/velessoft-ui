@@ -1,0 +1,64 @@
+{
+  "name": "@villetacore/velessoft-css",
+  "version": "0.2.0",
+  "description": "Framework-agnostic CSS components for Velessoft UI. Works with plain HTML, Vue, Svelte, Angular, Solid, Astro, htmx and any server templates.",
+  "type": "module",
+  "author": "villetacore <villetacore@proton.me>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/villetacore/velessoft-ui.git",
+    "directory": "packages/css"
+  },
+  "homepage": "https://github.com/villetacore/velessoft-ui#readme",
+  "bugs": {
+    "url": "https://github.com/villetacore/velessoft-ui/issues"
+  },
+  "files": [
+    "dist",
+    "LICENSE"
+  ],
+  "style": "./dist/velessoft.css",
+  "main": "./dist/velessoft.css",
+  "unpkg": "./dist/velessoft.full.min.css",
+  "jsdelivr": "./dist/velessoft.full.min.css",
+  "exports": {
+    ".": "./dist/velessoft.css",
+    "./velessoft.css": "./dist/velessoft.css",
+    "./velessoft.min.css": "./dist/velessoft.min.css",
+    "./full.css": "./dist/velessoft.full.css",
+    "./full.min.css": "./dist/velessoft.full.min.css",
+    "./components/*": "./dist/components/*",
+    "./package.json": "./package.json"
+  },
+  "sideEffects": [
+    "*.css"
+  ],
+  "peerDependencies": {
+    "@villetacore/velessoft-tokens": "^0.2.0"
+  },
+  "peerDependenciesMeta": {
+    "@villetacore/velessoft-tokens": {
+      "optional": true
+    }
+  },
+  "scripts": {
+    "build": "node ../../scripts/build-css.mjs",
+    "prepack": "node ../../scripts/build-tokens.mjs && npm run build"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "keywords": [
+    "velessoft",
+    "design-system",
+    "css",
+    "css-framework",
+    "ui",
+    "vue",
+    "svelte",
+    "angular",
+    "html"
+  ]
+}
