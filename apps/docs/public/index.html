@@ -1,0 +1,463 @@
+<!doctype html><html lang="ru"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>velessoft — OPEN / BUILD / REPEAT</title><link rel="stylesheet" href="tokens.css"><link rel="stylesheet" href="catalog.css"><body><header><div class="wordmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 100" fill="none"><path d="M6 22 31 88H45L79 9H61L37 67 23 22Z" fill="currentColor"/><path d="M88 10C104 9 115 18 116 30H100C99 25 94 23 87 25ZM83 39C96 43 116 46 116 64C116 83 98 94 76 88L64 82 71 67C82 76 99 75 99 66C99 60 88 59 76 54Z" fill="currentColor"/></svg>velessoft</div><div class="row"><span class="badge">VELESSOFT // DIY SYSTEM 0.6</span><button id="theme">Тёмная тема</button></div></header><div class="shell"><aside><p id="search-feedback" role="status" style="font-size:11px;margin:4px 8px"></p><input class="searchbox" id="catalog-search" type="search" aria-label="Поиск раздела" placeholder="Найти раздел…"><a href="#start">Обзор</a><a href="#brand">Логотип</a><a href="#colors">Цвета</a><a href="#type">Типографика</a><a href="#icons">Иконки</a><a href="#layout">Сетка и движение</a><a href="#ui">Компоненты</a><a href="#site">Сайт студии</a><a href="#projects">Продукты</a><a href="#rules">Правила и файлы</a><a href="#architecture">Архитектура системы</a><a href="#patterns">Шаблоны экранов</a><a href="#behavior">Поведение и состояния</a><a href="#forms-spec">Спецификация компонентов</a><a href="#responsive">Адаптивность и доступность</a><a href="#playground">Рабочий пример приложения</a><a href="#choose">Выбор компонентов</a><a href="#state-lab">Лаборатория состояний</a><a href="#handoff">Контракт экрана</a><a href="#governance">Развитие системы</a></aside><main><section id="start"><div class="eyebrow">VELESSOFT / DESIGN SYSTEM</div><h2>МЕНЬШЕ ГЛЯНЦА.<br>БОЛЬШЕ КОДА.</h2><p class="lead">Независимая студия разработки. Делаем софт на заказ. Развиваем опенсорс. Делимся тем, что помогает строить дальше.</p><p>OPEN / BUILD / REPEAT — альтернативная айдентика. DIY-плакат в маркетинге, спокойная инженерная система внутри продукта. Тексты и проекты ниже — примеры для согласования.</p><div class="riot"><div class="riot-top"><span>VELESSOFT / INDEPENDENT DEVELOPMENT</span><span>EST. NOW / ALWAYS WIP</span></div><div class="riot-title"><span>ПИШЕМ</span><span class="cutout">КОД<span class="asterisk">✳</span></span><span class="outline">ДВИГАЕМ</span><span>ИДЕИ<span class="period">_</span></span></div><div class="riot-bottom"><div class="riot-note">[ СОФТ НА ЗАКАЗ ]<br>[ ОТКРЫТЫЙ КОД ]<br>[ ПРЯМОЙ КОНТАКТ ]</div><div class="riot-stamp">FORK<br>THE<br>FUTURE ↗</div><div class="riot-ascii" aria-hidden="true">&lt; / &gt;<br> { VS }<br> ++ / --</div></div></div><div class="riot-strip">BUILD IT. BREAK IT. FIX IT. SHARE IT. / VELESSOFT / BUILD IT. BREAK IT. FIX IT. SHARE IT.</div><div class="riot-statement"><span class="mono">// ЗАЧЕМ МЫ ЗДЕСЬ</span><p>ХОРОШИЙ СОФТ<br>НЕ ПОЯВЛЯЕТСЯ<br><em>ИЗ ВОЗДУХА.</em></p><div>Мы превращаем задачи в работающие продукты.<br>А полезные инструменты — в открытый код.</div></div><h3>Характер бренда</h3><div class="punk-manifest"><div><span>01 / ПРЯМО</span><b>Говорим по делу.</b><p>Что делаем, как работаем, где посмотреть код. Без «революционных экосистем».</p></div><div><span>02 / ОТКРЫТО</span><b>Показываем процесс.</b><p>Документация, реальные решения и вклад команды. Открываем то, чем можем делиться.</p></div><div><span>03 / СВОБОДНО</span><b>С характером.</b><p>Плакатная графика, резкие края и стикеры. Удобство продукта важнее декоративного шума.</p></div></div><div class="row"><a class="button primary" href="tokens.json" download>JSON-токены ↓</a><a class="button" href="tokens.css" download>CSS и компоненты ↓</a></div></section><section id="brand"><div class="eyebrow">VELESSOFT / DESIGN SYSTEM</div><h2>VS. БЕЗ ЛИШНИХ СЛОЁВ.</h2><div class="demo"><div class="brandlock"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 100" fill="none"><path d="M6 22 31 88H45L79 9H61L37 67 23 22Z" fill="currentColor"/><path d="M88 10C104 9 115 18 116 30H100C99 25 94 23 87 25ZM83 39C96 43 116 46 116 64C116 83 98 94 76 88L64 82 71 67C82 76 99 75 99 66C99 60 88 59 76 54Z" fill="currentColor"/></svg>velessoft</div></div><div class="grid" style="margin-top:20px"><div class="card"><img src="assets/logo-dark.svg" width="90" height="90" alt="VS — dark"><p><a href="assets/logo-dark.svg" download>Скачать SVG</a></p></div><div class="card"><img src="assets/logo-violet.svg" width="90" height="90" alt="VS — violet"><p><a href="assets/logo-violet.svg" download>Скачать SVG</a></p></div><div class="card"><img src="assets/logo-lime.svg" width="90" height="90" alt="VS — lime"><p><a href="assets/logo-lime.svg" download>Скачать SVG</a></p></div></div><p>SVG — упрощённая геометрическая интерпретация VS, а не точная векторизация исходного эскиза. Название набирается Manrope 800; в финальном логотипе его следует перевести в кривые после согласования.</p><ul><li>Охранное поле: не меньше ¼ высоты знака со всех сторон.</li><li>Минимум: знак 24 px; связка с названием — 160 px по ширине. Для 16 px использовать отдельную упрощённую пиксельную версию после проверки.</li><li>Лайм — на графите. Графит и фиолетовый — на светлом. Белый — на графите.</li><li>Не растягивать, не менять пропорции, не добавлять обводку и тени. Объёмная графика допустима как иллюстрация, не как мастер-логотип.</li></ul></section><section id="colors"><div class="eyebrow">VELESSOFT / DESIGN SYSTEM</div><h2>КИСЛОТА НА ГРАФИТЕ.</h2><div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(160px,1fr))"><div><div class="swatch" style="background:#171B24;color:#F7F8F5">#171B24</div><p>graphite</p></div><div><div class="swatch" style="background:#F7F8F5;color:#171B24">#F7F8F5</div><p>paper</p></div><div><div class="swatch" style="background:#B8EF65;color:#171B24">#B8EF65</div><p>lime</p></div><div><div class="swatch" style="background:#8B7CF6;color:#171B24">#8B7CF6</div><p>violet</p></div></div><p>Ориентир для маркетинговых страниц: 75–85% нейтральных поверхностей, остальное — лайм и фиолетовый. В продукте цвет экономнее: один главный акцент на действие, нейтральные рабочие поверхности.</p><div class="grid two"><div class="card"><h3>Светлая тема</h3><p>Фон #F7F8F5 · поверхность #FFFFFF<br>Текст #171B24 · вторичный #545C6B<br>Ссылка #5845B8</p></div><div class="demo"><h3>Тёмная тема</h3><p>Фон #171B24 · поверхность #222834<br>Текст #F7F8F5 · вторичный #B8C0CD<br>Ссылка #B6AAFF</p></div></div><p>Брендовый #8B7CF6 на белом и белый на этом фиолетовом не использовать для мелкого текста. На лаймовой кнопке — графитовый текст. Ссылки подчёркивать; статусы сопровождать текстом и иконкой.</p><div class="tablewrap"><table><tr><th>Пара</th><th>Контраст</th><th>Применение</th></tr><tr><td>Графит / лайм</td><td>12.78:1</td><td>AA, обычный текст</td></tr><tr><td>Белый / графит</td><td>16.17:1</td><td>AA, обычный текст</td></tr><tr><td>Ссылка / светлый</td><td>6.66:1</td><td>AA, обычный текст</td></tr><tr><td>Ссылка / тёмный</td><td>8.36:1</td><td>AA, обычный текст</td></tr><tr><td>Графит / фиолетовый</td><td>5.18:1</td><td>AA, обычный текст</td></tr></table></div></section><section id="type"><div class="eyebrow">VELESSOFT / DESIGN SYSTEM</div><h2>ТИПОГРАФИКА С ГОЛОСОМ.</h2><div class="grid two"><div class="card"><h3>Manrope</h3><p style="font-size:32px">Современный софт<br>Аа Бб Вв 012345</p><p>400 — текст · 500 — подписи · 600 — кнопки · 700–800 — заголовки.</p></div><div class="card"><h3 style="font-family:Mono">JetBrains Mono</h3><pre>const idea = create();
+ship(idea);</pre><p>400–500: код, версии, пути, технические данные. Не использовать для длинных абзацев.</p></div></div><div class="tablewrap"><table><tr><th>Стиль</th><th>Desktop / mobile</th><th>Межстрочный</th></tr><tr><td>Display</td><td>64 / 40 px · 800</td><td>1.08</td></tr><tr><td>H2</td><td>40 / 30 px · 700</td><td>1.15</td></tr><tr><td>H3</td><td>24 / 22 px · 700</td><td>1.25</td></tr><tr><td>Основной</td><td>Приложение 14 / сайт 16 px · 400</td><td>1.6</td></tr><tr><td>Подпись / код</td><td>14 px · 400–500</td><td>1.5</td></tr></table></div><div class="rules-no"><b>Плакат — в заголовках, не в интерфейсе.</b><p>Верхний регистр только для коротких заголовков и меток. Длинный текст — обычный регистр Manrope 400. Моноширинный шрифт — для навигации, кода и подписей. Не имитировать ошибки терминала как декоративные сообщения.</p></div><p>Длина строки: 55–75 символов. В формах размер текста не менее 16 px. Шрифты с кириллицей включены локально; установка в систему не требуется для просмотра.</p></section><section id="icons"><div class="eyebrow">VELESSOFT / DESIGN SYSTEM</div><h2>ИКОНКИ БЕЗ ДЕКОРА.</h2><p>Lucide · сетка 24 × 24 · толщина 2 px · скруглённые окончания · currentColor. В плотных интерфейсах допустимы 16 и 20 px. Не смешивать с залитыми иконками другой библиотеки.</p><div class="icons"><div class="iconcell"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M5 12h14" />
+  <path d="m12 5 7 7-7 7" />
+</svg>
+<a href="assets/icons/arrow-right.svg" download>arrow-right</a></div><div class="iconcell"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M7 7h10v10" />
+  <path d="M7 17 17 7" />
+</svg>
+<a href="assets/icons/arrow-up-right.svg" download>arrow-up-right</a></div><div class="iconcell"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M20 6 9 17l-5-5" />
+</svg>
+<a href="assets/icons/check.svg" download>check</a></div><div class="iconcell"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="m6 9 6 6 6-6" />
+</svg>
+<a href="assets/icons/chevron-down.svg" download>chevron-down</a></div><div class="iconcell"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="10" />
+  <line x1="12" x2="12" y1="8" y2="12" />
+  <line x1="12" x2="12.01" y1="16" y2="16" />
+</svg>
+<a href="assets/icons/circle-alert.svg" download>circle-alert</a></div><div class="iconcell"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="10" />
+  <path d="m16 9-5.5 5.5L8 12" />
+</svg>
+<a href="assets/icons/circle-check.svg" download>circle-check</a></div><div class="iconcell"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <rect width="14" height="14" x="8" y="8" rx="2" ry="2" />
+  <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" />
+</svg>
+<a href="assets/icons/copy.svg" download>copy</a></div><div class="iconcell"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M12 15V3" />
+  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+  <path d="m7 10 5 5 5-5" />
+</svg>
+<a href="assets/icons/download.svg" download>download</a></div><div class="iconcell"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M15 3h6v6" />
+  <path d="M10 14 21 3" />
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+</svg>
+<a href="assets/icons/external-link.svg" download>external-link</a></div><div class="iconcell"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z" />
+</svg>
+<a href="assets/icons/folder.svg" download>folder</a></div><div class="iconcell"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M15 6a9 9 0 0 0-9 9V3" />
+  <circle cx="18" cy="6" r="3" />
+  <circle cx="6" cy="18" r="3" />
+</svg>
+<a href="assets/icons/git-branch.svg" download>git-branch</a></div><div class="iconcell"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z" />
+  <path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12" />
+  <path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17" />
+</svg>
+<a href="assets/icons/layers.svg" download>layers</a></div><div class="iconcell"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M21 12a9 9 0 1 1-6.219-8.56" />
+</svg>
+<a href="assets/icons/loader-circle.svg" download>loader-circle</a></div><div class="iconcell"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
+  <rect x="2" y="4" width="20" height="16" rx="2" />
+</svg>
+<a href="assets/icons/mail.svg" download>mail</a></div><div class="iconcell"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M4 5h16" />
+  <path d="M4 12h16" />
+  <path d="M4 19h16" />
+</svg>
+<a href="assets/icons/menu.svg" download>menu</a></div><div class="iconcell"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401" />
+</svg>
+<a href="assets/icons/moon.svg" download>moon</a></div><div class="iconcell"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M5 12h14" />
+  <path d="M12 5v14" />
+</svg>
+<a href="assets/icons/plus.svg" download>plus</a></div><div class="iconcell"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="m21 21-4.34-4.34" />
+  <circle cx="11" cy="11" r="8" />
+</svg>
+<a href="assets/icons/search.svg" download>search</a></div><div class="iconcell"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915" />
+  <circle cx="12" cy="12" r="3" />
+</svg>
+<a href="assets/icons/settings.svg" download>settings</a></div><div class="iconcell"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="4" />
+  <path d="M12 2v2" />
+  <path d="M12 20v2" />
+  <path d="m4.93 4.93 1.41 1.41" />
+  <path d="m17.66 17.66 1.41 1.41" />
+  <path d="M2 12h2" />
+  <path d="M20 12h2" />
+  <path d="m6.34 17.66-1.41 1.41" />
+  <path d="m19.07 4.93-1.41 1.41" />
+</svg>
+<a href="assets/icons/sun.svg" download>sun</a></div><div class="iconcell"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M12 19h8" />
+  <path d="m4 17 6-6-6-6" />
+</svg>
+<a href="assets/icons/terminal.svg" download>terminal</a></div><div class="iconcell"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+  <path d="M16 3.128a4 4 0 0 1 0 7.744" />
+  <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+  <circle cx="9" cy="7" r="4" />
+</svg>
+<a href="assets/icons/users.svg" download>users</a></div><div class="iconcell"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M18 6 6 18" />
+  <path d="m6 6 12 12" />
+</svg>
+<a href="assets/icons/x.svg" download>x</a></div></div><p>Декоративные иконки: aria-hidden. Кнопки без текста: обязательное aria-label. Логотипы GitHub и других сервисов брать из их официальных бренд-наборов, не подменять похожими пиктограммами.</p></section><section id="layout"><div class="eyebrow">VELESSOFT / DESIGN SYSTEM</div><h2>Ритм, сетка, движение.</h2><div class="grid"><div class="card"><h3>4 / 8</h3><p>Шаг 4 px. Основные отступы: 8, 12, 16, 24, 32, 48, 64, 96.</p></div><div class="card"><h3>12 / 4</h3><p>Desktop: 12 колонок, gutter 24, контейнер до 1200 px. Mobile: 4 колонки, gutter 16, поля 20 px.</p></div><div class="card"><h3>0 / 3</h3><p>Радиусы: 0 px. Маркетинговые кнопки — жёсткая тень 3 px; в продукте тени убираем. Стикер можно повернуть на 2–3°, поля и таблицы — всегда ровно.</p></div></div><p>Переходы: 120 ms для hover, 180 ms для раскрытия; ease-out. Поддерживать prefers-reduced-motion. Без постоянного вращения и фоновой анимации в рабочих интерфейсах.</p><p>Брейкпоинты: 640 / 960 / 1280 px. На мобильном — одна колонка форм, навигация за кнопкой «Меню», действия с областью нажатия не менее 44 × 44 px.</p></section><section id="ui"><div class="eyebrow">VELESSOFT / DESIGN SYSTEM</div><h2>Компоненты и состояния.</h2><div class="row"><button class="primary">Создать проект <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M5 12h14" />
+  <path d="M12 5v14" />
+</svg>
+</button><button>Открыть документацию <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M7 7h10v10" />
+  <path d="M7 17 17 7" />
+</svg>
+</button><button disabled>Недоступно</button><button aria-busy="true"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M21 12a9 9 0 1 1-6.219-8.56" />
+</svg>
+ Сохранение…</button></div><p class="spec">Desktop: 34 px · touch: 44 px · gap 8 · radius 0 · focus ring 3 · одна primary-кнопка на группу</p><div class="grid two" style="margin-top:24px"><div class="card"><label for="project">Название проекта</label><input id="project" placeholder="Например, клиентский портал"><small>Будет видно участникам команды.</small><div style="height:20px"></div><label for="mail">Рабочая почта</label><input id="mail" value="alex@" aria-invalid="true" aria-describedby="mail-error"><small class="error" id="mail-error">Введите полный адрес, например name@company.ru.</small></div><div class="card"><h3>Состояния</h3><p class="success"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="10" />
+  <path d="m16 9-5.5 5.5L8 12" />
+</svg>
+ Изменения сохранены</p><p class="error"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="10" />
+  <line x1="12" x2="12" y1="8" y2="12" />
+  <line x1="12" x2="12.01" y1="16" y2="16" />
+</svg>
+ Не удалось сохранить. Повторите попытку.</p><div class="row"><span class="badge">Черновик</span><span class="badge">В работе</span><span class="badge">Опубликовано</span></div><p>Статус передаётся словами, не только цветом.</p></div></div><div class="grid two" style="margin-top:20px"><div class="card"><h3>Пока нет проектов</h3><p>Создайте проект, чтобы собрать код, задачи и документацию в одном месте.</p><button class="primary" id="create-demo">Создать пример</button><p id="demo-status" aria-live="polite"></p></div><div class="card"><h3>Удалить проект?</h3><p>В реальном продукте подтвердите удаление именем проекта и объясните, какие данные будут удалены. Разрушительное действие — отдельная кнопка с ясным текстом.</p><p>Для загрузки данных — skeleton; для пустого результата поиска — запрос и действие «Сбросить фильтры».</p></div></div></section><section id="site"><div class="eyebrow">VELESSOFT / DESIGN SYSTEM</div><h2>ГЛАВНАЯ / БЕЗ ПИДЖАКА.</h2><div class="demo"><div class="row" style="justify-content:space-between"><b>velessoft</b><span>Услуги · Подход · Опенсорс</span></div><div class="hero"><div><h2>ВАША ИДЕЯ.<br><span class="lime">НАШ КОММИТ.</span></h2><p class="muted">Разрабатываем ПО на заказ и развиваем опенсорс.</p><div class="row"><a class="button primary" href="#rules">Давайте соберём ↗</a><a href="#projects" style="color:#B6AAFF">Смотреть исходники ↗</a></div></div><div class="symbol"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 100" fill="none"><path d="M6 22 31 88H45L79 9H61L37 67 23 22Z" fill="currentColor"/><path d="M88 10C104 9 115 18 116 30H100C99 25 94 23 87 25ZM83 39C96 43 116 46 116 64C116 83 98 94 76 88L64 82 71 67C82 76 99 75 99 66C99 60 88 59 76 54Z" fill="currentColor"/></svg></div></div></div><div class="tape" style="margin-top:24px">CUSTOM SOFTWARE // OPEN SOURCE // VELESSOFT //</div><div class="grid two" style="margin-top:24px"><div class="card"><span class="mono">01 / НА ЗАКАЗ</span><h3>Сложная задача?<br>Приносите.</h3><p>Разбираемся в задаче, проектируем решение, пишем код и помогаем запустить.</p></div><div class="card" style="background:#8B7CF6;color:#171B24;border-color:#171B24"><span class="mono">02 / В ОТКРЫТУЮ</span><h3>Есть чем<br>поделиться.</h3><p>Развиваем открытые инструменты и принимаем вклад сообщества.</p></div></div><p>Структура: первый экран → задачи клиентов → реальные кейсы → подход → опенсорс → команда → контакт. Кейсы показывают задачу, решение и подтверждённый результат; без вымышленных цифр и клиентов.</p><details><summary>Предыдущее, более спокойное направление</summary><img class="preview" src="assets/homepage-concept.png" alt="Растровый концепт главной страницы"></details></section><section id="projects"><div class="eyebrow">VELESSOFT / DESIGN SYSTEM</div><h2>FORK THE LOOK.</h2><div class="repo-cover"><span class="tag">[ PROJECT NAME ] / BY VELESSOFT</span><h3>BUILD SOMETHING<br><span style="color:#B8EF65">WORTH FORKING.</span></h3><p>Обложка опенсорс-проекта · название и описание подставляются под реальный репозиторий.</p><span class="tag">README.md → docs/ → CONTRIBUTING.md</span></div><p>Общие шрифты, иконки, сетка и поведение. У каждого проекта — своё имя и геометрический символ; подпись <b>by velessoft</b> связывает его со студией. Акцент можно менять, но цвет статусов сохраняется.</p><div class="product"><div class="productnav"><b><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z" />
+  <path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12" />
+  <path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17" />
+</svg>
+ Project / Demo</b><span class="badge">by velessoft</span><span class="muted">Обзор · Репозитории · Настройки</span></div><div class="productbody"><div class="row" style="justify-content:space-between"><h3>Репозитории</h3><button class="primary" id="repo-add"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M5 12h14" />
+  <path d="M12 5v14" />
+</svg>
+ Добавить</button></div><p class="muted">Демонстрационный интерфейс проекта</p><div class="tablewrap"><table><tr><th>Название</th><th>Статус</th><th>Видимость</th></tr><tr><td><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M15 6a9 9 0 0 0-9 9V3" />
+  <circle cx="18" cy="6" r="3" />
+  <circle cx="6" cy="18" r="3" />
+</svg>
+ project-core</td><td>Подключён</td><td>Публичный</td></tr><tr><td><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M15 6a9 9 0 0 0-9 9V3" />
+  <circle cx="18" cy="6" r="3" />
+  <circle cx="6" cy="18" r="3" />
+</svg>
+ project-docs</td><td>Черновик</td><td>Приватный</td></tr></table></div><p id="repo-status" aria-live="polite"></p></div></div><div class="grid two" style="margin-top:20px"><div class="card"><h3>Продуктовый интерфейс</h3><p>Нейтральная поверхность, понятные таблицы и формы. Лайм — главное действие. Фиолетовый — выбранная область, иллюстрации и идентичность.</p></div><div class="card"><h3>Опенсорс</h3><p>README: знак, краткое назначение, установка, минимальный пример, документация, вклад, лицензия. Обложка репозитория — тот же графит, крупное имя и одна акцентная форма.</p></div></div></section><section id="rules"><div class="eyebrow">VELESSOFT / DESIGN SYSTEM</div><h2>ЗАБИРАЙТЕ В РАБОТУ.</h2><ul><li><b>tokens.json</b> — базовые и семантические токены для обеих тем.</li><li><b>tokens.css</b> — локальные шрифты, темы и стартовые стили компонентов.</li><li><b>assets/logo-*.svg</b> — четыре цветовых версии знака; favicon.svg — исходник для иконки сайта.</li><li><b>assets/icons/</b> — выбранный набор Lucide и лицензия.</li><li><b>assets/fonts/</b> — Manrope, JetBrains Mono и лицензии OFL.</li><li><b>README.md</b> — состав, установка, ограничения и следующий этап.</li></ul><p>Чеклист экрана: клавиатурная навигация; видимый фокус; подписи полей; ошибки рядом с полем; контраст текста; 320 / 768 / 1440 px; длинные названия; пустое, ошибочное и загрузочное состояние; reduced motion.</p><p>Панк-версия не использует глитч, мигание, мелкий нечитаемый код или курсор с анимацией. Для функциональных элементов — прямые подписи и устойчивый фокус. Это стартовая дизайн-система, а не полный комплект экранов всех будущих продуктов. Для каждого конкретного проекта понадобятся пользовательские сценарии, карта экранов и макеты по его требованиям.</p><p>Источники: <a href="https://fontsource.org/fonts/manrope/about">Manrope / OFL</a> · <a href="https://www.jetbrains.com/lp/mono/">JetBrains Mono / OFL</a> · <a href="https://lucide.dev/license">Lucide / ISC</a>.</p></section><section id="architecture"><div class="eyebrow">VELESSOFT / SYSTEM</div><h2>Архитектура системы</h2><p>Основа для сайтов, кабинетов, внутренних систем, опенсорс-инструментов и мобильных веб-приложений. Для конкретного продукта сначала определите пользователей, задачи и данные.</p><div class="grid"><div class="card"><h3>Основа</h3><p>Цвет, шрифт, размер, отступ, радиус, движение → семантические токены → тема.</p></div><div class="card"><h3>Компоненты</h3><p>Кнопка, поле, переключатель, таблица, диалог. У каждого — состояния и правила поведения.</p></div><div class="card"><h3>Сценарии</h3><p>Поиск → список → просмотр → создание → редактирование → подтверждение.</p></div></div><h3>Как начать новый продукт</h3><ol><li>Опишите роли и 3–5 главных задач пользователя.</li><li>Составьте сущности: поля, связи, права, жизненный цикл.</li><li>Нарисуйте карту разделов и основные пути пользователя.</li><li>Выберите шаблоны экранов из системы.</li><li>Добавьте пустые, загрузочные и ошибочные состояния.</li><li>Проверьте сценарии на клавиатуре и узком экране.</li></ol><p>Визуальный характер бренда сильнее на маркетинговых страницах. В рабочих экранах приоритет — плотность информации, читаемость и предсказуемые действия.</p></section><section id="patterns"><div class="eyebrow">VELESSOFT / SYSTEM</div><h2>Шаблоны экранов</h2><div class="tablewrap"><table class="spec-table"><tr><th>Экран</th><th>Состав и поведение</th></tr><tr><td>Список сущностей</td><td>Заголовок, основное действие, поиск, фильтры, таблица/карточки, число результатов, пагинация. Фильтры сохраняются при возврате из карточки.</td></tr><tr><td>Карточка сущности</td><td>Хлебные крошки, название, статус, действия, данные и история. Вкладки только для независимых групп информации.</td></tr><tr><td>Создание / редактирование</td><td>Поля по смысловым группам, обязательность, подсказки, ошибки рядом. Сохранить и отменить; предупреждение о несохранённых изменениях.</td></tr><tr><td>Настройки</td><td>Категории слева, формы справа. Опасные действия отдельно. Указать область действия: пользователь, проект или организация.</td></tr><tr><td>Обзор</td><td>Только показатели, которые помогают принять решение. Период, источник, состояние обновления и переход к деталям.</td></tr><tr><td>Документация</td><td>Навигация, поиск, оглавление, код с копированием, версия и связанные темы.</td></tr><tr><td>Вход и доступ</td><td>Понятные способы входа, восстановление, сессия истекла, недостаточно прав. После входа вернуть к исходной задаче.</td></tr></table></div></section><section id="behavior"><div class="eyebrow">VELESSOFT / SYSTEM</div><h2>Поведение и состояния</h2><div class="tablewrap"><table><tr><th>Ситуация</th><th>Правило</th></tr><tr><td>Загрузка</td><td>Сохранять структуру экрана skeleton-элементами. На отправке блокировать повторное действие; aria-busy. Длительные операции показывают прогресс, если он известен.</td></tr><tr><td>Пусто</td><td>Первый запуск: объяснение и создание. Нет результатов: запрос и сброс фильтров. Нет прав: причина и доступный следующий шаг.</td></tr><tr><td>Ошибка</td><td>Сохранять ввод. Объяснить, что не получилось, и дать повтор. Ошибки полей связать через aria-describedby; итог ошибки формы объявить через role=alert.</td></tr><tr><td>Диалог</td><td>Перенести фокус внутрь, удерживать в диалоге, Escape закрывает, после закрытия вернуть фокус. Разрушительное действие описывает объект и последствия.</td></tr><tr><td>Поиск</td><td>Указать область поиска. Enter или debounce 250–400 ms. Отменять устаревшие запросы; показывать количество результатов.</td></tr><tr><td>Удаление</td><td>Предпочесть восстановление, когда возможно. Для необратимого удаления — подтверждение; для критичного — имя объекта.</td></tr><tr><td>Сохранение</td><td>Сообщить результат без исчезновения данных. При конфликте изменений предложить сравнение/перезагрузку; не перезаписывать молча.</td></tr><tr><td>Сеть недоступна</td><td>Показать статус, сохранить черновик, предложить повтор после восстановления. Не выдавать локальное изменение за серверное.</td></tr></table></div></section><section id="forms-spec"><div class="eyebrow">VELESSOFT / SYSTEM</div><h2>Спецификация компонентов</h2><div class="tablewrap"><table><tr><th>Компонент</th><th>Варианты</th><th>Правила</th></tr><tr><td>Button</td><td>primary / secondary / ghost / danger; desktop 34 / touch 44 px</td><td>Один главный призыв на группу. Loading сохраняет ширину. Disabled сопровождается объяснением, когда причина неочевидна.</td></tr><tr><td>Input / textarea</td><td>default / focus / error / disabled / readonly</td><td>Постоянный label; placeholder не заменяет подпись. Проверка после blur или отправки; при исправлении убрать ошибку.</td></tr><tr><td>Select</td><td>native / searchable / multiselect</td><td>Для коротких списков native. Для большого числа значений — поиск. Показывать выбранное и способ очистки.</td></tr><tr><td>Checkbox / radio / switch</td><td>unchecked / checked / mixed</td><td>Checkbox — независимый выбор, radio — один из группы, switch — немедленная настройка. Вся подпись кликабельна.</td></tr><tr><td>Tabs</td><td>horizontal / overflow</td><td>Arrow keys, Home/End; aria-selected и связанная панель. Не подменяют глобальную навигацию.</td></tr><tr><td>Table</td><td>standard / compact / selectable</td><td>Сортировка явно отмечена; числа справа; действия в конце. На mobile — прокрутка таблицы или осмысленные карточки.</td></tr><tr><td>Toast / banner</td><td>info / success / error</td><td>Toast для результата; banner для длительной проблемы. Критичная информация не исчезает по таймеру.</td></tr><tr><td>Tooltip</td><td>hover + focus</td><td>Только дополнительная информация, не обязательная инструкция. Essential-контент доступен без hover.</td></tr></table></div></section><section id="responsive"><div class="eyebrow">VELESSOFT / SYSTEM</div><h2>Адаптивность и доступность</h2><ul><li>320–639 px: одна колонка; основное действие доступно без горизонтальной прокрутки.</li><li>640–959 px: две колонки, если данные помещаются; навигация сворачивается.</li><li>От 960 px: постоянная боковая навигация; контент ограничен разумной шириной.</li><li>Текст масштабируется до 200%; при zoom 400% проверить reflow. Не фиксировать высоту текстовых карточек.</li><li>Контраст обычного текста ≥4.5:1, крупного ≥3:1. Границы значимых контролов и фокус ≥3:1.</li><li>Клавиатура: логичный порядок Tab, видимый фокус, Escape для временных слоёв. Иконки имеют доступные названия.</li><li>Учитывать длинные имена, локализацию, даты и часовые пояса. Не полагаться только на цвет.</li><li>Touch-цели в этой системе — минимум 44×44 px. Компактные таблицы расширяют область нажатия на мобильных.</li></ul><p>Пороговые значения — критерии проектирования; соответствие всего продукта требует проверки реальных экранов и сценариев.</p></section><section id="playground"><div class="eyebrow">VELESSOFT / SYSTEM</div><h2>Рабочий пример приложения</h2><div class="workbench-strip"><b>OPEN TOOLS / SHARP EDGES</b><span>LOCAL WORKSPACE · EDIT / BUILD / REPEAT</span></div><p>Локальная модель списка проектов: создание, редактирование, поиск, фильтрация и удаление с отменой. Данные сохраняются в этом браузере, если доступно локальное хранилище.</p><div class="demo-toolbar"><input id="project-search" type="search" placeholder="Поиск проектов" aria-label="Поиск проектов"><select id="project-filter" aria-label="Статус"><option value="">Все статусы</option><option>В работе</option><option>Черновик</option><option>Завершён</option></select><button id="density">Компактный вид</button><button class="primary" id="new-project">Создать проект</button></div><p id="project-count" aria-live="polite"></p><div class="tablewrap" id="project-table"></div><p id="storage-note" class="muted"></p><dialog id="project-dialog"><form id="project-form"><h3 id="dialog-title">Новый проект</h3><label for="project-name">Название *</label><input id="project-name" required maxlength="80"><label for="project-state">Статус</label><select id="project-state"><option>Черновик</option><option>В работе</option><option>Завершён</option></select><p id="form-error" class="error" role="alert"></p><div class="row" style="margin-top:24px"><button class="primary" type="submit">Сохранить</button><button type="button" id="cancel-project">Отмена</button></div></form></dialog></section><section id="choose"><div class="eyebrow">VELESSOFT / SYSTEM</div><h2>Выбор компонентов</h2><p>Начинайте с задачи пользователя. Таблица ниже помогает выбрать подходящий элемент и избежать лишней сложности.</p><div class="tablewrap"><table><tr><th>Задача</th><th>Решение</th><th>Когда менять подход</th></tr><tr><td>Выбрать одно значение</td><td>2–5 коротких вариантов: radio. Более длинный список: select.</td><td>Большой справочник: combobox с поиском, клавиатурой и явным выбранным значением.</td></tr><tr><td>Включить настройку</td><td>Switch, если изменение применяется сразу.</td><td>Если есть общая кнопка сохранения — checkbox.</td></tr><tr><td>Открыть детали</td><td>Отдельная страница для сущности с собственным URL.</td><td>Drawer для быстрого просмотра с сохранением контекста списка.</td></tr><tr><td>Подтвердить действие</td><td>Dialog для короткого решения с последствиями.</td><td>Много полей и шагов — отдельная страница, не длинный диалог.</td></tr><tr><td>Показать коллекцию</td><td>Таблица для сравнения атрибутов.</td><td>Карточки для визуальных объектов. Kanban — только если перемещение по статусам является задачей.</td></tr><tr><td>Показать обратную связь</td><td>Inline для ошибок ввода; toast для результата.</td><td>Banner для проблемы, которая сохраняется и влияет на работу.</td></tr><tr><td>Дать несколько действий</td><td>Главное видно, вторичные рядом или в меню.</td><td>Не прятать единственное полезное действие за меню «Ещё».</td></tr></table></div></section><section id="state-lab"><div class="eyebrow">VELESSOFT / SYSTEM</div><h2>Лаборатория состояний</h2><p>Проверьте один экран в разных условиях. Эти состояния нужны в каждом приложении, даже когда основной сценарий уже выглядит законченным.</p><div class="demo-toolbar"><label for="lab-state">Состояние списка</label><select id="lab-state"><option value="ready">Данные загружены</option><option value="loading">Загрузка</option><option value="empty">Первый запуск</option><option value="error">Ошибка сервера</option><option value="offline">Нет подключения</option><option value="denied">Недостаточно прав</option></select></div><div id="lab-screen" aria-live="polite"></div><div class="appnote" id="lab-rule"></div></section><section id="handoff"><div class="eyebrow">VELESSOFT / SYSTEM</div><h2>Контракт экрана</h2><p>Передавайте разработчику не только картинку. Этот шаблон фиксирует поведение и границы задачи.</p><div class="row"><a class="button primary" href="screen-contract.md" download>Скачать шаблон .md</a><a class="button" href="release-checklist.md" download>Чеклист выпуска</a></div><div class="grid two" style="margin-top:16px"><div class="card"><h3>Данные и права</h3><ul><li>Роли, видимость и разрешённые операции.</li><li>Поля: тип, обязательность, формат, длина.</li><li>Источники данных, обновление и конфликт версий.</li><li>Какие параметры сохраняются в URL.</li></ul></div><div class="card"><h3>Взаимодействие</h3><ul><li>Точка входа, основной путь и возврат.</li><li>Клавиатура, фокус и порядок Tab.</li><li>Загрузка, ошибки, пустота, успех, offline.</li><li>Поведение на mobile и с длинным контентом.</li></ul></div></div><h3 style="margin-top:24px">Критерий готовности</h3><p>Пользователь завершает основную задачу; ошибки можно исправить; изменения не теряются; недоступное действие объяснено; критичный результат подтверждён. Макет, спецификация и реализация используют одинаковые имена токенов.</p></section><section id="governance"><div class="eyebrow">VELESSOFT / SYSTEM</div><h2>Развитие системы</h2><div class="grid two"><div class="card"><h3>Три уровня</h3><p><b>Базовые:</b> lime, graphite, spacing.<br><b>Семантические:</b> background, text, primary, error.<br><b>Компонентные:</b> control-height, panel-padding.</p><p>Продукт использует семантическую роль; тема меняет значение роли.</p></div><div class="card"><h3>Когда добавлять компонент</h3><p>Есть реальная повторяющаяся задача. Существующий компонент не решает её без сложных исключений. Описаны API, состояния, клавиатура, темы и адаптивность.</p></div></div><h3 style="margin-top:24px">Статусы зрелости</h3><table><tr><th>Статус</th><th>Значение</th></tr><tr><td>Концепт</td><td>Визуальный пример; поведение ещё не реализовано.</td></tr><tr><td>Прототип</td><td>Локальное поведение работает; нет серверной интеграции и полного аудита.</td></tr><tr><td>Готов к продукту</td><td>Проверены реальные данные, доступность, браузеры, ошибки, производительность и интеграция.</td></tr></table><p>Текущий каталог: рабочие примеры — прототипы; остальные образцы — концепты. Изменения, нарушающие API или смысл токенов, требуют отдельной миграции.</p><h3>v0.6 / Что добавлено</h3><p>Полнотекстовый поиск разделов, лаборатория состояний, правила выбора компонентов, контракт экрана, чеклист выпуска и согласованные типографические токены.</p></section><footer>velessoft · OPEN / BUILD / REPEAT · v0.3 · 01.11.2026<br>Рабочий дизайн-пакет: цвета и компоненты можно проверить и уточнить перед внедрением.</footer></main></div><script src="catalog.js"></script></body></html>

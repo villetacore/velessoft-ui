@@ -1,0 +1,34 @@
+{
+  "name": "velessoft-ui-workspace",
+  "private": true,
+  "version": "0.1.0",
+  "author": "villetacore <villetacore@proton.me>",
+  "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "tokens": "node scripts/build-tokens.mjs",
+    "build": "npm run tokens && npm run build -w @velessoft/ui && vite build",
+    "dev": "vite --host 127.0.0.1",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "check": "npm run typecheck && npm test && npm run build"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.0.0",
+    "@testing-library/react": "^16.0.0",
+    "@testing-library/user-event": "^14.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "jsdom": "^26.0.0",
+    "prettier": "^3.9.10",
+    "typescript": "^5.9.0",
+    "vite": "^7.0.0",
+    "vitest": "^5.0.5"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "@velessoft/tokens",
+  "version": "0.1.0",
+  "type": "module",
+  "author": "villetacore <villetacore@proton.me>",
+  "license": "MIT",
+  "files": [
+    "tokens.json",
+    "tokens.css",
+    "LICENSE"
+  ],
+  "exports": {
+    "./tokens.json": "./tokens.json",
+    "./tokens.css": "./tokens.css"
+  }
+}
