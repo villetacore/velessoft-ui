@@ -29,6 +29,22 @@
     "react-dom": ">=18"
   },
   "scripts": {
-    "build": "tsc -p tsconfig.json && cp src/styles.css dist/styles.css"
-  }
+    "build": "tsc -p tsconfig.json && cp src/styles.css dist/styles.css",
+    "prepack": "npm run build"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "homepage": "https://github.com/villetacore/velessoft-ui#readme",
+  "bugs": {
+    "url": "https://github.com/villetacore/velessoft-ui/issues"
+  },
+  "keywords": [
+    "velessoft",
+    "design-system",
+    "ui",
+    "react",
+    "typescript"
+  ]
 }

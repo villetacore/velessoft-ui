@@ -12,5 +12,23 @@
   "exports": {
     "./tokens.json": "./tokens.json",
     "./tokens.css": "./tokens.css"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "homepage": "https://github.com/villetacore/velessoft-ui#readme",
+  "bugs": {
+    "url": "https://github.com/villetacore/velessoft-ui/issues"
+  },
+  "keywords": [
+    "velessoft",
+    "design-system",
+    "ui",
+    "react",
+    "typescript"
+  ],
+  "scripts": {
+    "prepack": "node ../../scripts/build-tokens.mjs"
   }
 }

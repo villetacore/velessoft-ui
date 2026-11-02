@@ -1,57 +1,102 @@
-# Velessoft UI
+<p align="center"><img src="docs/images/banner.svg" alt="Velessoft UI — compact interfaces, open code, sharp edges" width="100%"></p>
 
-**Compact interfaces. Open code. Sharp edges.**
+<p align="center">
+<a href="https://github.com/villetacore/velessoft-ui/actions/workflows/ci.yml"><img src="https://github.com/villetacore/velessoft-ui/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+<a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-B8EF65?style=flat-square&labelColor=171B24" alt="MIT license"></a>
+<img src="https://img.shields.io/badge/status-experimental-8B7CF6?style=flat-square&labelColor=171B24" alt="Experimental">
+</p>
 
-An experimental design system and React component library by **[villetacore](https://github.com/villetacore)**. Lime, violet, graphite; compact desktop controls and larger touch targets.
+<p align="center"><a href="docs/README.md">Documentation</a> · <a href="docs/getting-started.md">Quick start</a> · <a href="docs/components.md">Components</a> · <a href="docs/gallery.md">Screenshots</a> · <a href="README.ru.md">Русский</a></p>
 
-Status: **0.1.0 — experimental**. Packages are prepared locally, not yet published to npm. API may change.
+**A compact React component library and open design system by [villetacore](https://github.com/villetacore).** Lime, violet and graphite. Sharp geometry, readable working surfaces, native controls.
 
-## Run locally
+![Dark workspace built with Velessoft UI](docs/images/dashboard-dark.jpg)
 
-Node.js 22.12+ and npm.
+## What is inside
+
+| Layer | What you get |
+| --- | --- |
+| **React library** | Eight typed components, forwarded field refs, linked labels and error descriptions. |
+| **Theme tokens** | JSON source and generated CSS variables for light and dark themes. |
+| **Design catalog** | Brand rules, screen patterns, state laboratory and a local CRUD prototype. |
+| **Working example** | A React workspace with project creation, search, validation and theme switching. |
+
+**0.1.0 is experimental.** APIs may change. This is a small foundation, not a complete application framework or an accessibility certification.
+
+## Install the library
+
+The public GitHub package archives are installable with npm. An npm-registry release is not yet available.
 
 ```sh
-npm ci
-npm run dev
+npm install react react-dom
+npm install https://raw.githubusercontent.com/villetacore/velessoft-ui/main/releases/v0.1.0/velessoft-tokens-0.1.0.tgz https://raw.githubusercontent.com/villetacore/velessoft-ui/main/releases/v0.1.0/velessoft-ui-0.1.0.tgz
 ```
-
-Open the URL printed by Vite. The home page is a React example; its documentation link opens the full design catalog.
-
-```sh
-npm run check  # type checking, interaction tests, library + demo build
-```
-
-## Components
-
-Button · Input · Textarea · Select · Checkbox · Badge · Alert · Dialog.
 
 ```tsx
 import { Button, Input } from '@velessoft/ui';
 import '@velessoft/tokens/tokens.css';
 import '@velessoft/ui/styles.css';
 
-<Input label="Project name" required />
-<Button variant="primary">Create project</Button>
+export function ProjectForm() {
+  return (
+    <form onSubmit={(event) => event.preventDefault()}>
+      <Input label="Project name" name="name" required />
+      <Button type="submit" variant="primary">Create project</Button>
+    </form>
+  );
+}
 ```
 
-This import example assumes local workspace linking or installation from a future release. Today, clone and build this repository; do not expect `npm install @velessoft/ui` to resolve our release.
+For validated, controlled forms see [recipes](docs/recipes.md). Scope dark mode with `<div data-theme="dark">`.
 
-## Structure
+## Explore locally
 
-- `packages/ui`: typed React components and scoped styles.
-- `packages/tokens`: JSON source and generated theme variables.
-- `apps/docs/public`: offline design catalog, patterns and prototype playground.
-- `examples/dashboard`: actual React application using library components.
-- `design`: principles, component API and delivery templates.
+Use **Node.js 22.12+ on the 22 LTS line**, or Node 24/26, and npm.
 
-## Themes and density
+```sh
+git clone https://github.com/villetacore/velessoft-ui.git
+cd velessoft-ui
+npm ci
+npm run dev
+```
 
-Set `data-theme="dark"` on an ancestor, otherwise light tokens apply. Controls use 34px on desktop and 44px for coarse pointers. Import tokens before component styles. Components inherit the application font; the catalog bundles Manrope and JetBrains Mono.
+Open the address printed by Vite. Follow **Дизайн-каталог ↗** to open the offline design guide. React demo data lives in memory; the catalog's separate prototype uses localStorage when available.
 
-## Readiness
+```sh
+npm run check    # TypeScript, interaction tests, production build
+npm run pack     # Build installable packages in artifacts/
+```
 
-React component tests cover selected interactions, not a full accessibility certification. Native dialog uses the browser modal implementation; test focus and Escape on target browsers. Catalog examples and the React example are separate prototypes; neither connects to a backend. The catalog persists its project demo locally; the React example keeps data in memory. Logo geometry and early generated illustrations are concepts, not final brand masters.
+## One system, two themes
 
-## License and attribution
+| Light workspace | Dialog validation |
+| --- | --- |
+| ![Light workspace](docs/images/dashboard-light.jpg) | ![Dialog showing a field error](docs/images/dialog-validation.jpg) |
 
-Code: MIT, © 2026 villetacore (Виллета Корь). See [LICENSE](LICENSE). Third-party fonts and icons retain their own licenses: [notices](THIRD_PARTY_NOTICES.md). Project identity and maintenance: villetacore. No trademark rights are granted by the code license.
+[View the full gallery →](docs/gallery.md)
+
+## Components
+
+**Button · Input · Textarea · Select · Checkbox · Badge · Alert · Dialog**
+
+Controls start at 34px on desktop and 44px on coarse pointers. Components inherit your font and use `--vs-*` semantic tokens. [API reference →](docs/components.md)
+
+## Repository map
+
+```text
+packages/ui/          React source, scoped CSS, type declarations
+packages/tokens/      Token source + generated CSS
+apps/docs/public/     Offline design catalog
+examples/dashboard/  Real React example
+ docs/                Guides, recipes and screenshots
+ design/              Principles and delivery templates
+ releases/v0.1.0/     Installable package archives + checksums
+```
+
+## Contribute
+
+Start with [CONTRIBUTING](CONTRIBUTING.md). Keep changes small, document behavior and include screenshots for visual work. [Roadmap](docs/roadmap.md) · [Changelog](CHANGELOG.md) · [Report an issue](https://github.com/villetacore/velessoft-ui/issues).
+
+## License
+
+MIT © 2026 **villetacore (Виллета Корь)**. Fonts and icons retain their original licenses; see [third-party notices](THIRD_PARTY_NOTICES.md). Early generated branding images are reference concepts. No trademark rights are granted by the code license.
