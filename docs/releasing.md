@@ -70,3 +70,7 @@ Prereleases do not trigger publication. Existing versions are skipped, so a part
 `npm run pack` writes archives to `artifacts/`. Inspect with `tar -tzf artifacts/villetacore-velessoft-ui-0.2.0.tgz`. Files in `releases/v0.1.0/` are historical archives with the original `@velessoft` scope and stay immutable.
 
 Sources: [npm trusted publishing](https://docs.npmjs.com/trusted-publishers/), [npm trust](https://docs.npmjs.com/cli/v11/commands/npm-trust/).
+
+## Download a CI build
+
+Every successful CI run on Node 24 packs all four workspaces and uploads a `velessoft-packages-<commit>` artifact. Open the repository Actions tab, select the CI run, and download it from Artifacts. Archives are retained for 30 days. This is a downloadable build; registry publication still requires the Publish packages workflow.

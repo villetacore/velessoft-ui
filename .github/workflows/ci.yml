@@ -18,3 +18,14 @@ jobs:
       - run: npm run check
       - name: Install packed archives in a clean consumer
         run: npm run verify:packages
+      - name: Pack distributable archives
+        if: matrix.node-version == 24
+        run: node scripts/pack.mjs
+      - name: Upload package archives
+        if: matrix.node-version == 24
+        uses: actions/upload-artifact@v4
+        with:
+          name: velessoft-packages-${{ github.sha }}
+          path: artifacts/*.tgz
+          if-no-files-found: error
+          retention-days: 30
