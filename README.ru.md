@@ -27,7 +27,7 @@ npm install @villetacore/velessoft-ui @villetacore/velessoft-tokens
 npm install @villetacore/velessoft-css @villetacore/velessoft-tokens @villetacore/velessoft-elements
 ```
 
-> Публикация в npm настроена через GitHub Actions ([инструкция](docs/releasing.md)). До первого релиза соберите архивы командой `npm run pack`.
+> Релизы публикуются в npmjs.org и в GitHub Packages (раздел «Packages» репозитория). Для обычной установки используйте npmjs.org; для GitHub Packages нужен `.npmrc` с токеном — [инструкция](docs/releasing.md#github-packages).
 
 ```tsx
 import { Button, VelessoftProvider, en } from '@villetacore/velessoft-ui';

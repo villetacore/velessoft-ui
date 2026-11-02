@@ -1,15 +1,31 @@
-name: Publish to npm
+name: Publish packages
 on:
   release:
     types: [published]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing tag to publish, e.g. v0.2.0
+        required: true
+      target:
+        description: Registry
+        type: choice
+        options: [both, npm, github]
+        default: both
 permissions:
   contents: read
 concurrency:
-  group: npm-release
+  group: package-release
   cancel-in-progress: false
+env:
+  TAG: ${{ github.event.release.tag_name || inputs.tag }}
 jobs:
-  publish:
-    if: github.repository == 'villetacore/velessoft-ui' && !github.event.release.prerelease
+  npm:
+    name: npmjs.org
+    if: >-
+      github.repository == 'villetacore/velessoft-ui' &&
+      !github.event.release.prerelease &&
+      (github.event_name == 'release' || inputs.target != 'github')
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -17,7 +33,7 @@ jobs:
     steps:
       - uses: actions/checkout@v5
         with:
-          ref: ${{ github.event.release.tag_name }}
+          ref: ${{ env.TAG }}
       - uses: actions/setup-node@v5
         with:
           node-version: 24
@@ -26,9 +42,40 @@ jobs:
       - run: npm ci
       - name: Validate release version
         env:
-          RELEASE_TAG: ${{ github.event.release.tag_name }}
+          RELEASE_TAG: ${{ env.TAG }}
         run: node scripts/validate-release.mjs
       - run: npm run check
       - run: npm run verify:packages
       - name: Publish packages with trusted publishing
+        run: node scripts/publish.mjs
+
+  github:
+    name: GitHub Packages
+    if: >-
+      github.repository == 'villetacore/velessoft-ui' &&
+      !github.event.release.prerelease &&
+      (github.event_name == 'release' || inputs.target != 'npm')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ env.TAG }}
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          registry-url: https://npm.pkg.github.com
+          scope: "@villetacore"
+      - run: npm ci
+      - name: Validate release version
+        env:
+          RELEASE_TAG: ${{ env.TAG }}
+        run: node scripts/validate-release.mjs
+      - run: npm run check
+      - name: Publish packages to GitHub Packages
+        env:
+          PUBLISH_TARGET: github
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: node scripts/publish.mjs

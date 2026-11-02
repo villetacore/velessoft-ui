@@ -32,7 +32,7 @@ npm install @villetacore/velessoft-ui @villetacore/velessoft-tokens
 npm install @villetacore/velessoft-css @villetacore/velessoft-tokens @villetacore/velessoft-elements
 ```
 
-> **npm status:** the packages are configured for publication through GitHub Actions. Until the first release is published, build archives locally with `npm run pack` — see [releasing](docs/releasing.md).
+> **Registries:** releases publish to [npmjs.org](https://www.npmjs.com/org/villetacore) and to [GitHub Packages](https://github.com/villetacore?tab=packages&repo_name=velessoft-ui). Use npmjs.org for normal installs; GitHub Packages needs an `.npmrc` with a token — see [releasing](docs/releasing.md#github-packages).
 
 ### React
 

@@ -36,6 +36,21 @@ done
 
 The `@villetacore` scope must belong to the npm account (a user named `villetacore` or an organization). Never commit a token or paste one in an issue.
 
+## GitHub Packages
+
+The same release also publishes all four packages to GitHub Packages (`npm.pkg.github.com`) through the `GitHub Packages` job in `publish.yml`. It uses the built-in `GITHUB_TOKEN`; no setup or secrets are needed, and it does not depend on the npm bootstrap above. The packages then appear in the repository's **Packages** sidebar.
+
+To publish an existing tag again or to one registry only, run **Actions → Publish packages → Run workflow** with the tag and target (`both`, `npm`, `github`).
+
+Installing from GitHub Packages requires authentication even for public packages. Consumers add to their project `.npmrc`:
+
+```ini
+@villetacore:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
+```
+
+with a personal access token that has `read:packages`. npmjs.org remains the recommended install source.
+
 ## GitHub Pages demo
 
 `.github/workflows/pages.yml` builds the React demo, the HTML example and the design catalog on every push to `main`. Enable it once: repository **Settings → Pages → Source: GitHub Actions**. The site appears at `https://villetacore.github.io/velessoft-ui/`.
@@ -45,8 +60,8 @@ The `@villetacore` scope must belong to the npm account (a user named `villetaco
 1. Bump `version` in the root and all four `packages/*/package.json` (and the `^0.x` peer ranges in css/elements), update `CHANGELOG.md`, run `npm install` to refresh the lockfile.
 2. Run `npm run check` and `npm run verify:packages`; push.
 3. Create a GitHub Release with tag `vMAJOR.MINOR.PATCH` matching the package versions and publish it.
-4. `.github/workflows/publish.yml` validates the tag, tests, builds, verifies the archives and publishes to npm with provenance.
-5. Check the Actions run and the npm package pages before announcing.
+4. `.github/workflows/publish.yml` validates the tag, tests, builds, verifies the archives and publishes to npm with provenance and to GitHub Packages.
+5. Check the Actions run, the npm package pages and the repository Packages list before announcing.
 
 Prereleases do not trigger publication. Existing versions are skipped, so a partially failed run can be retried. A registry error other than 404 stops publication.
 

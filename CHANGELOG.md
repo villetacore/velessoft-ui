@@ -18,7 +18,7 @@
 
 ### Tooling
 
-- Release scripts handle all four packages; `npm run verify:packages` installs packed archives into a clean consumer. CI runs on Node 22 and 24. GitHub Pages workflow deploys the demo.
+- Releases publish to npmjs.org and GitHub Packages (manual re-run via workflow dispatch). Release scripts handle all four packages; `npm run verify:packages` installs packed archives into a clean consumer. CI runs on Node 22 and 24. GitHub Pages workflow deploys the demo.
 - New `examples/html` page built only with CSS + Web Components.
 
 ## 0.1.0
