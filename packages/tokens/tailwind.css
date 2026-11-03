@@ -15,6 +15,11 @@
   --color-vs-accent: var(--vs-accent);
   --color-vs-info: var(--vs-info);
   --color-vs-overlay: var(--vs-overlay);
+  --color-vs-border-subtle: var(--vs-border-subtle);
+  --color-vs-glass-bg: var(--vs-glass-bg);
+  --color-vs-glass-border: var(--vs-glass-border);
+  --color-vs-glass-highlight: var(--vs-glass-highlight);
+  --color-vs-glass-shadow: var(--vs-glass-shadow);
   --font-vs: var(--vs-font-family);
   --font-vs-mono: var(--vs-font-mono);
   --radius-vs: var(--vs-radius-control);

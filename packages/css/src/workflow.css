@@ -98,3 +98,14 @@
     gap: 4px;
   }
 }
+
+.vs-stepper li {
+  border-radius: var(--vs-radius-control);
+  border-top-width: 2px;
+}
+.vs-step-number {
+  border-radius: 50%;
+}
+.vs-input-addon:has(> span:empty) {
+  display: none;
+}

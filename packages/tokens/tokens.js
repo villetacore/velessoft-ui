@@ -21,7 +21,12 @@ const tokens = {
     "warning": "#855000",
     "accent": "#8B7CF6",
     "info": "#5845B8",
-    "overlay": "#171B2488"
+    "overlay": "#171B2488",
+    "borderSubtle": "#DDE1E8",
+    "glassBg": "#FFFFFFDB",
+    "glassBorder": "#FFFFFFE6",
+    "glassHighlight": "#FFFFFFF2",
+    "glassShadow": "#171B2412"
   },
   "dark": {
     "bg": "#171B24",
@@ -38,7 +43,12 @@ const tokens = {
     "warning": "#F4CA80",
     "accent": "#8B7CF6",
     "info": "#B6AAFF",
-    "overlay": "#05070Bb3"
+    "overlay": "#05070Bb3",
+    "borderSubtle": "#394252",
+    "glassBg": "#222834E6",
+    "glassBorder": "#65708980",
+    "glassHighlight": "#FFFFFF18",
+    "glassShadow": "#00000033"
   },
   "space": [
     4,
@@ -52,9 +62,9 @@ const tokens = {
     96
   ],
   "radius": {
-    "control": 0,
-    "card": 0,
-    "pill": 0
+    "control": 6,
+    "card": 12,
+    "pill": 999
   },
   "type": {
     "family": "Manrope",
@@ -71,10 +81,12 @@ const tokens = {
   },
   "motion": {
     "fast": "120ms",
-    "normal": "180ms"
+    "normal": "180ms",
+    "slow": "280ms",
+    "ease": "cubic-bezier(0.2, 0.8, 0.2, 1)"
   },
   "identity": {
-    "name": "DIY WORKBENCH",
+    "name": "Independent Studio",
     "displayCase": "uppercase, short headlines only",
     "marketingShadow": "3px 3px 0",
     "productShadow": "none",
@@ -92,7 +104,7 @@ const tokens = {
       "body": 14,
       "label": 12,
       "heading": 26,
-      "controlHeight": 34,
+      "controlHeight": 36,
       "rowPadding": 8,
       "panelPadding": 16,
       "gap": 12

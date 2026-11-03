@@ -1,0 +1,157 @@
+/* Opt-in glass materials. Solid surfaces are the default and the fallback. */
+.vs-glass-panel,
+.vs-glass {
+  background: var(--vs-surface);
+  color: var(--vs-text);
+  border: 1px solid var(--vs-border-subtle);
+  border-radius: var(--vs-radius-card);
+}
+.vs-glass-panel {
+  padding: var(--vs-panel-padding);
+  min-width: 0;
+}
+@supports (
+  (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))
+) {
+  .vs-glass-panel,
+  .vs-glass {
+    background: var(--vs-glass-bg);
+    border-color: var(--vs-glass-border);
+    backdrop-filter: blur(var(--vs-glass-blur)) saturate(125%);
+    -webkit-backdrop-filter: blur(var(--vs-glass-blur)) saturate(125%);
+    box-shadow:
+      inset 0 1px 0 var(--vs-glass-highlight),
+      0 8px 28px var(--vs-glass-shadow);
+  }
+  [data-material="glass"] .vs-dialog {
+    background: var(--vs-glass-bg);
+    border: 1px solid var(--vs-glass-border);
+    backdrop-filter: blur(var(--vs-glass-blur));
+    -webkit-backdrop-filter: blur(var(--vs-glass-blur));
+    box-shadow:
+      inset 0 1px 0 var(--vs-glass-highlight),
+      0 18px 48px var(--vs-glass-shadow);
+  }
+}
+/* An explicit user preference wins over the material, including on nested panels. */
+[data-material="solid"] .vs-glass-panel,
+[data-material="solid"] .vs-glass,
+[data-material="solid"] .vs-dialog {
+  background: var(--vs-surface);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: none;
+  border-color: var(--vs-border-subtle);
+}
+@media (prefers-reduced-transparency: reduce) {
+  .vs-glass-panel,
+  .vs-glass,
+  [data-material="glass"] .vs-dialog {
+    background: var(--vs-surface);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    box-shadow: none;
+    border-color: var(--vs-border-subtle);
+  }
+}
+@media (forced-colors: active) {
+  .vs-glass-panel,
+  .vs-glass,
+  [data-material="glass"] .vs-dialog {
+    background: Canvas;
+    color: CanvasText;
+    border: 1px solid CanvasText;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    box-shadow: none;
+  }
+}
+/* Motion is finite, local and does not delay focus or interaction. */
+.vs-reveal {
+  animation: vs-surface-enter var(--vs-motion-slow) var(--vs-motion-ease) both;
+}
+.vs-dialog[open]:not(.vs-drawer) {
+  animation: vs-surface-enter var(--vs-motion-normal) var(--vs-motion-ease);
+}
+.vs-tab-panel:not([hidden]) {
+  animation: vs-content-enter var(--vs-motion-normal) var(--vs-motion-ease);
+}
+.vs-menu:not([hidden]) {
+  animation: vs-content-enter var(--vs-motion-fast) var(--vs-motion-ease);
+}
+.vs-input {
+  transition:
+    border-color var(--vs-motion-fast),
+    box-shadow var(--vs-motion-fast);
+}
+.vs-input:focus-visible {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--vs-accent) 16%, transparent);
+}
+.vs-segmented span,
+.vs-nav-list a {
+  transition:
+    background var(--vs-motion-fast),
+    color var(--vs-motion-fast);
+}
+.vs-toast {
+  border-radius: var(--vs-radius-control);
+  box-shadow: 0 8px 24px var(--vs-glass-shadow);
+}
+@keyframes vs-surface-enter {
+  from {
+    opacity: 0.35;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes vs-content-enter {
+  from {
+    opacity: 0.55;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .vs-reveal,
+  .vs-dialog[open],
+  .vs-tab-panel,
+  .vs-menu,
+  .vs-toast,
+  .vs-drawer {
+    animation: none !important;
+  }
+  .vs-input,
+  .vs-button,
+  .vs-card,
+  .vs-segmented span,
+  .vs-nav-list a {
+    transition: none !important;
+  }
+  .vs-button:active,
+  .vs-card:hover {
+    transform: none !important;
+  }
+}
+[data-motion="reduced"] .vs-reveal,
+[data-motion="reduced"] .vs-dialog,
+[data-motion="reduced"] .vs-tab-panel,
+[data-motion="reduced"] .vs-menu,
+[data-motion="reduced"] .vs-toast,
+[data-motion="reduced"] .vs-drawer {
+  animation: none !important;
+}
+[data-motion="reduced"] .vs-input,
+[data-motion="reduced"] .vs-button,
+[data-motion="reduced"] .vs-card,
+[data-motion="reduced"] .vs-segmented span,
+[data-motion="reduced"] .vs-nav-list a {
+  transition: none !important;
+}
+[data-motion="reduced"] .vs-button:active,
+[data-motion="reduced"] .vs-card:hover {
+  transform: none !important;
+}

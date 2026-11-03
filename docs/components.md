@@ -136,3 +136,40 @@ Labels are explicit props so applications can translate them. Search is synchron
 ```
 
 These five React components are exported from the UI package. Their CSS is also available via `@villetacore/velessoft-css/components/workflow.css`. Equivalent new Web Component custom elements are not included in this release.
+
+## Application kit (0.4.0)
+
+| Component | Required / notable props | Behavior |
+| --- | --- | --- |
+| NumberInput | label; native min, max, step | Native numeric editing. onChange receives the native event; empty/partial values remain strings. |
+| DateInput | label; native min, max | Native calendar field; YYYY-MM-DD values, no timezone conversion. |
+| TimeInput | label; native step | Native time field; HH:mm or native seconds format. |
+| FileInput | label; onFilesChange?, multiple?, accept? | Reports File[]. No upload or file-content reading. accept is a hint; validate on server. |
+| MultiSelect | label, options, searchLabel, emptyText; value?, defaultValue?, onValueChange?, name?, hint?, error?, disabled? | Searchable native checkbox list. Selected values remain when filtered. name emits repeated hidden form values. Unique option values required. |
+| Toggle | Button props; pressed?, defaultPressed?, onPressedChange? | aria-pressed button, Enter/Space, no default form submission. |
+| ToggleGroup | label, options; value?, defaultValue?, onValueChange?, disabled? | Multiple independently pressed buttons; native Tab order. |
+| Collapsible | title, children; open?, defaultOpen?, onOpenChange?, disabled? | Linked button and hidden panel; controlled and uncontrolled. |
+| Timeline | label, items: {id,title,description?,dateTime?,time?}[] | Semantic ordered history with optional time elements. Caller formats dates. |
+| Toolbar | label, native div props | Labelled group for mixed controls. Not ARIA toolbar; uses ordinary Tab order. |
+| PageHeader | title; description?, eyebrow?, actions?, level? | Responsive page title/actions; heading level 1 or 2. |
+| NavList | label, items: {id,label,href,badge?}[]; current? | Real links with aria-current=page; no router dependency. |
+| CodeBlock | code, label, copyLabel, copiedLabel, errorLabel | Escaped plain code, scrollable keyboard-focusable region and copy feedback. No syntax-highlighting dependency. |
+
+All five native field wrappers and choices use the same light/dark styling. The application CSS group can be imported separately through `@villetacore/velessoft-css/components/application.css`. React implementations above are not new custom elements; Vue/Svelte can use shared CSS and native HTML with their own state bindings.
+
+```tsx
+const [members, setMembers] = useState<string[]>([]);
+<MultiSelect label="Members" searchLabel="Find member" emptyText="No matches"
+  options={[{value:'alice',label:'Alice'},{value:'bob',label:'Bob'}]}
+  value={members} onValueChange={setMembers} name="members" />
+<NumberInput label="Seats" min={1} max={100} defaultValue={5} />
+<DateInput label="Launch date" />
+<TimeInput label="Reminder time" />
+<FileInput label="Attachments" multiple onFilesChange={setFiles} />
+```
+
+Native date/time/file appearance depends on the browser and OS. This release does not claim custom date-range pickers, drag-and-drop upload, virtualization or remote-search support.
+
+### GlassPanel
+
+Opt-in frosted panel with standard div props, forwarded ref and `animate?: boolean` (false by default). Use it for short summaries and floating surfaces. Shared CSS: `vs-glass-panel`; optional entrance: `vs-reveal`. See [material tokens, accessibility and fallbacks](theming.md#glass-and-motion-04).

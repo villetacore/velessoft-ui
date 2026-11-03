@@ -5,8 +5,8 @@
   padding: var(--vs-panel-padding);
   color: var(--vs-text);
   background: var(--vs-surface);
-  border: 1px solid var(--vs-border);
-  border-top: 3px solid var(--vs-tone, var(--vs-accent));
+  border: 1px solid var(--vs-border-subtle);
+  border-top: 1px solid var(--vs-border-subtle);
   border-radius: var(--vs-radius-card);
   min-width: 0;
 }
@@ -21,8 +21,8 @@
     box-shadow var(--vs-motion-fast);
 }
 .vs-card.vs-interactive:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 4px 4px 0 var(--vs-accent);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px color-mix(in srgb, var(--vs-text) 8%, transparent);
 }
 .vs-card-header {
   display: flex;
@@ -63,7 +63,7 @@
   gap: var(--vs-stack-gap, 12px);
   grid-template-columns: repeat(
     auto-fill,
-    minmax(var(--vs-grid-min, 220px), 1fr)
+    minmax(min(100%, var(--vs-grid-min, 220px)), 1fr)
   );
 }
 .vs-divider {
@@ -141,7 +141,7 @@
   text-align: center;
   color: var(--vs-text);
   background: var(--vs-surface-muted);
-  border: 1px solid var(--vs-border);
+  border: 1px solid var(--vs-border-subtle);
   border-bottom-width: 2px;
 }
 .vs-code {
@@ -152,7 +152,7 @@
 .vs-table-wrap {
   width: 100%;
   overflow-x: auto;
-  border: 1px solid var(--vs-border);
+  border: 1px solid var(--vs-border-subtle);
 }
 .vs-table {
   width: 100%;
@@ -286,4 +286,11 @@
   display: flex;
   gap: 8px;
   margin-top: 8px;
+}
+
+.vs-card[class*="vs-success"],
+.vs-card[class*="vs-warning"],
+.vs-card[class*="vs-error"],
+.vs-card[class*="vs-info"] {
+  border-top: 3px solid var(--vs-tone);
 }

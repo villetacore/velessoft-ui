@@ -131,3 +131,15 @@ MIT © 2026 **villetacore (Виллета Корь)**. Fonts and icons retain th
 ## Next version: 0.3.0
 
 Five additional React components are available in source: **SearchInput, PasswordInput, CopyButton, Stepper, DescriptionList**. See [API and usage](docs/components.md#workflow-components-030) and [screenshot](docs/images/components-030.jpg). This version is prepared in source; registry publication requires a release.
+
+## Application kit preview — 0.4.0
+
+13 additional React components and a calmer visual theme are available in source. [Component API](docs/components.md#application-kit-040) · [Theming](docs/theming.md). Controls have familiar rounded corners and neutral panels, while lime/violet remain the identity. CSS patterns work across frameworks; native Vue/Svelte adapters remain future work.
+
+### Glass, with restraint
+
+The 0.4 preview adds `GlassPanel`, optional frosted dialogs, soft entrance transitions and independent material/motion toggles in the dashboard. Solid fallbacks and system accessibility preferences are built in. See [theming and materials](docs/theming.md#glass-and-motion-04).
+
+![Application kit with glass surfaces](docs/images/application-kit.jpg)
+
+[Full dark preview](docs/images/material-dark.jpg) · [Light solid fallback](docs/images/material-light-solid.jpg)

@@ -25,7 +25,7 @@
 .vs-button.vs-primary {
   background: var(--vs-primary);
   color: var(--vs-on-primary);
-  border-color: var(--vs-brand-graphite);
+  border-color: transparent;
   box-shadow: var(--vs-shadow-offset) var(--vs-accent);
 }
 .vs-button.vs-danger {
@@ -42,7 +42,7 @@
   background: var(--vs-surface-muted);
 }
 .vs-button.vs-primary:active:not(:disabled) {
-  transform: translate(2px, 2px);
+  transform: translateY(1px);
   box-shadow: none;
 }
 .vs-button:disabled,

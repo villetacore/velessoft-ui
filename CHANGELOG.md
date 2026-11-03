@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.4.0 (unreleased)
+
+- 14 new React components: GlassPanel, NumberInput, DateInput, TimeInput, FileInput, MultiSelect, Toggle, ToggleGroup, Collapsible, Timeline, Toolbar, PageHeader, NavList, CodeBlock.
+- Shared CSS patterns, calmer rounded controls/panels, subtle panel borders, retained lime/violet identity and responsive Grid overflow fix.
+- Opt-in glass materials with solid/forced-color fallbacks, finite entrance transitions, reduced motion/transparency preferences and demo toggles.
+- Interactive example gallery and 12 behavior/semantics tests.
+- All four package versions aligned; native Vue/Svelte adapters are not included.
+
+
 ## 0.3.0 (unreleased)
 
 - New React SearchInput, PasswordInput, CopyButton, Stepper and DescriptionList with shared framework-agnostic CSS.

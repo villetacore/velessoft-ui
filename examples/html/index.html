@@ -296,15 +296,13 @@
 
     <script type="module">
       import { toast } from "../../packages/elements/src/index.ts";
-      document
-        .getElementById("toast")
-        .addEventListener("click", () =>
-          toast({
-            title: "Saved",
-            description: "Changes are live.",
-            tone: "success",
-          }),
-        );
+      document.getElementById("toast").addEventListener("click", () =>
+        toast({
+          title: "Saved",
+          description: "Changes are live.",
+          tone: "success",
+        }),
+      );
       document.getElementById("open-dialog").addEventListener("click", () => {
         document.getElementById("dialog").open = true;
       });

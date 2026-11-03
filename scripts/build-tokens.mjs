@@ -25,10 +25,13 @@ const scale = {
   "font-size-display": px(t.type.marketing.display),
   "motion-fast": t.motion.fast,
   "motion-normal": t.motion.normal,
+  "motion-slow": t.motion.slow,
+  "motion-ease": t.motion.ease,
+  "glass-blur": "18px",
   "control-height": px(t.density.desktop.controlHeight),
   "panel-padding": px(t.density.desktop.panelPadding),
   gap: px(t.density.desktop.gap),
-  "shadow-offset": "2px 2px 0",
+  "shadow-offset": "0 0 0",
 };
 const brand = Object.fromEntries(
   Object.entries(t.brand).map(([k, v]) => [`brand-${kebab(k)}`, v]),
@@ -82,7 +85,7 @@ declare const tokens: {
   space: number[];
   radius: { control: number; card: number; pill: number };
   type: { family: string; mono: string; body: number; small: number; h1: number; h2: number; h3: number; marketing: { body: number; display: number } };
-  motion: { fast: string; normal: string };
+  motion: { fast: string; normal: string; slow: string; ease: string };
   [key: string]: unknown;
 };
 export default tokens;

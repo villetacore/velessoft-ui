@@ -1,0 +1,206 @@
+/* Application patterns; usable as semantic HTML in every framework. */
+.vs-multiselect {
+  padding: 16px;
+  border: 1px solid var(--vs-border-subtle, var(--vs-border));
+  border-radius: var(--vs-radius-card);
+  min-width: 0;
+  margin: 0;
+  background: var(--vs-surface);
+}
+.vs-multiselect legend {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 0 6px;
+}
+.vs-multiselect > small {
+  display: block;
+  font-size: 12px;
+  color: var(--vs-muted);
+  margin-bottom: 10px;
+}
+.vs-multiselect .vs-field {
+  margin: 8px 0;
+}
+.vs-multiselect-options {
+  max-height: 220px;
+  overflow: auto;
+  padding: 0 4px;
+}
+.vs-multiselect .vs-field-error {
+  color: var(--vs-error);
+}
+.vs-toggle-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.vs-button[aria-pressed="true"] {
+  background: var(--vs-primary);
+  color: var(--vs-on-primary);
+  border-color: var(--vs-primary);
+}
+.vs-collapsible {
+  border: 1px solid var(--vs-border-subtle, var(--vs-border));
+  border-radius: var(--vs-radius-card);
+  overflow: hidden;
+  background: var(--vs-surface);
+}
+.vs-collapsible > button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: var(--vs-control-height);
+  border: 0;
+  background: transparent;
+  color: var(--vs-text);
+  font: inherit;
+  font-weight: 600;
+  text-align: start;
+  padding: 12px 16px;
+  cursor: pointer;
+}
+.vs-collapsible > button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.vs-collapsible > button:focus-visible {
+  outline: 2px solid var(--vs-link);
+  outline-offset: -3px;
+}
+.vs-collapsible-body {
+  padding: 0 16px 16px;
+}
+.vs-collapsible-body[hidden] {
+  display: none;
+}
+.vs-timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.vs-timeline li {
+  position: relative;
+  padding: 0 0 22px 24px;
+  border-left: 1px solid var(--vs-border-subtle, var(--vs-border));
+  margin-left: 5px;
+}
+.vs-timeline li:before {
+  content: "";
+  position: absolute;
+  left: -5px;
+  top: 6px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--vs-accent);
+}
+.vs-timeline li:last-child {
+  padding-bottom: 0;
+  border-left-color: transparent;
+}
+.vs-timeline time {
+  display: block;
+  font-size: 12px;
+  color: var(--vs-muted);
+  margin: 3px 0;
+}
+.vs-timeline li > div {
+  font-size: 13px;
+  color: var(--vs-muted);
+}
+.vs-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  background: var(--vs-surface);
+  border: 1px solid var(--vs-border-subtle, var(--vs-border));
+  border-radius: var(--vs-radius-card);
+}
+.vs-toolbar .vs-field {
+  margin: 0;
+}
+.vs-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.vs-page-header h1,
+.vs-page-header h2 {
+  font-size: var(--vs-font-size-h2);
+  letter-spacing: -0.03em;
+  margin: 4px 0;
+}
+.vs-page-header p {
+  color: var(--vs-muted);
+  font-size: 14px;
+  margin: 4px 0;
+}
+.vs-page-header small {
+  font: 11px var(--vs-font-mono);
+  color: var(--vs-link);
+}
+.vs-page-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.vs-nav-list a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.vs-nav-badge {
+  font: 11px var(--vs-font-mono);
+  opacity: 0.8;
+}
+.vs-code-block {
+  margin: 0;
+  min-width: 0;
+  background: var(--vs-surface-muted);
+  border: 1px solid var(--vs-border-subtle, var(--vs-border));
+  border-radius: var(--vs-radius-card);
+  overflow: hidden;
+}
+.vs-code-block figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--vs-border-subtle, var(--vs-border));
+  font-size: 12px;
+}
+.vs-code-block pre {
+  margin: 0;
+  padding: 16px;
+  overflow: auto;
+  font: 12px/1.6 var(--vs-font-mono);
+  color: var(--vs-text);
+  tab-size: 2;
+}
+.vs-code-block pre:focus-visible {
+  outline: 2px solid var(--vs-link);
+  outline-offset: -3px;
+}
+input[type="file"].vs-input {
+  padding: 6px;
+}
+input[type="file"].vs-input::file-selector-button {
+  font: inherit;
+  padding: 5px 10px;
+  margin-right: 10px;
+  border: 0;
+  border-radius: 4px;
+  background: var(--vs-surface-muted);
+  color: var(--vs-text);
+  cursor: pointer;
+}

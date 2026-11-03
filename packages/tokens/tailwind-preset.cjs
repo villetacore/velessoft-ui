@@ -18,7 +18,12 @@ module.exports = {
           "warning": "var(--vs-warning)",
           "accent": "var(--vs-accent)",
           "info": "var(--vs-info)",
-          "overlay": "var(--vs-overlay)"
+          "overlay": "var(--vs-overlay)",
+          "border-subtle": "var(--vs-border-subtle)",
+          "glass-bg": "var(--vs-glass-bg)",
+          "glass-border": "var(--vs-glass-border)",
+          "glass-highlight": "var(--vs-glass-highlight)",
+          "glass-shadow": "var(--vs-glass-shadow)"
         }
       },
       "fontFamily": {

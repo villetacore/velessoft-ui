@@ -1,3 +1,4 @@
+import { ApplicationExamples } from "./application";
 import React, { useState } from "react";
 import { createRoot } from "react-dom/client";
 import {
@@ -59,7 +60,15 @@ const initial: Project[] = [
 function Workspace({
   dark,
   setDark,
+  glass,
+  setGlass,
+  reduced,
+  setReduced,
 }: {
+  glass: boolean;
+  setGlass: (v: boolean) => void;
+  reduced: boolean;
+  setReduced: (v: boolean) => void;
   dark: boolean;
   setDark: (v: boolean) => void;
 }) {
@@ -78,7 +87,7 @@ function Workspace({
   );
   return (
     <>
-      <header>
+      <header className="vs-glass">
         <b>velessoft / UI</b>
         <span>DIY WORKBENCH · by villetacore</span>
         <Stack direction="row" gap={8} style={{ marginLeft: "auto" }}>
@@ -87,6 +96,12 @@ function Workspace({
               ☰
             </IconButton>
           </Tooltip>
+          <Button aria-pressed={glass} onClick={() => setGlass(!glass)}>
+            Стекло
+          </Button>
+          <Button aria-pressed={!reduced} onClick={() => setReduced(!reduced)}>
+            Анимации
+          </Button>
           <Button onClick={() => setDark(!dark)}>
             {dark ? "Светлая" : "Тёмная"} тема
           </Button>
@@ -102,7 +117,7 @@ function Workspace({
         />
         <div className="intro">
           <div>
-            <small>EXPERIMENTAL / 0.3.0</small>
+            <small>EXPERIMENTAL / 0.4.0</small>
             <h1>Рабочая область</h1>
             <p>
               Настоящие React-компоненты. Данные примера хранятся только в
@@ -452,7 +467,7 @@ function Workspace({
               <DescriptionList
                 items={[
                   { id: "owner", term: "Автор", description: "villetacore" },
-                  { id: "version", term: "Версия", description: "0.3.0" },
+                  { id: "version", term: "Версия", description: "0.4.0" },
                   { id: "license", term: "Лицензия", description: "MIT" },
                 ]}
               />
@@ -466,6 +481,7 @@ function Workspace({
             </div>
           </Grid>
         </section>
+        <ApplicationExamples />
         <footer>© 2026 villetacore · MIT</footer>
       </main>
 
@@ -536,10 +552,24 @@ function Workspace({
 
 function App() {
   const [dark, setDark] = useState(true);
+  const [glass, setGlass] = useState(true);
+  const [reduced, setReduced] = useState(false);
   return (
-    <div data-theme={dark ? "dark" : "light"} className="app vs-root">
+    <div
+      data-theme={dark ? "dark" : "light"}
+      data-material={glass ? "glass" : "solid"}
+      data-motion={reduced ? "reduced" : "normal"}
+      className="app vs-root"
+    >
       <ToastProvider>
-        <Workspace dark={dark} setDark={setDark} />
+        <Workspace
+          dark={dark}
+          setDark={setDark}
+          glass={glass}
+          setGlass={setGlass}
+          reduced={reduced}
+          setReduced={setReduced}
+        />
       </ToastProvider>
     </div>
   );

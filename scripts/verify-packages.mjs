@@ -42,6 +42,7 @@ try {
     const tokens = (await import('@villetacore/velessoft-tokens')).default;
     if (typeof ui.Button !== 'object' || typeof ui.Tabs !== 'function') throw new Error('React exports missing');
     for (const name of ['SearchInput','PasswordInput','CopyButton','Stepper','DescriptionList']) if (!ui[name]) throw new Error('Missing workflow export: '+name);
+    for (const name of ['GlassPanel','NumberInput','DateInput','TimeInput','FileInput','MultiSelect','Toggle','ToggleGroup','Collapsible','Timeline','Toolbar','PageHeader','NavList','CodeBlock']) if (!ui[name]) throw new Error('Missing application export: '+name);
     if (typeof el.toast !== 'function') throw new Error('Element exports missing');
     if (!tokens.light.primary) throw new Error('Token export missing');
     console.log('React exports:', Object.keys(ui).length, '| elements:', Object.keys(el).length);

@@ -208,3 +208,12 @@ select.vs-input {
     font-size: 16px;
   }
 }
+
+.vs-input-group > .vs-input:not(:last-child) {
+  border-start-end-radius: 0;
+  border-end-end-radius: 0;
+}
+.vs-input-addon:last-child {
+  border-start-end-radius: var(--vs-radius-control);
+  border-end-end-radius: var(--vs-radius-control);
+}

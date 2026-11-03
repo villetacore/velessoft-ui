@@ -97,3 +97,146 @@ main > footer {
     grid-template-columns: 1fr;
   }
 }
+
+/* A calmer application shell with a recognizable studio accent. */
+.app > header {
+  border-bottom: 1px solid var(--vs-border-subtle);
+  background: var(--vs-surface);
+  color: var(--vs-text);
+  padding: 12px 24px;
+}
+.app > header > b {
+  position: relative;
+  letter-spacing: -0.04em;
+}
+.app > header > b:before {
+  content: "";
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 3px;
+  background: var(--vs-primary);
+  border: 1px solid var(--vs-muted);
+  margin-right: 8px;
+}
+.app > header span {
+  color: var(--vs-muted);
+}
+.stats {
+  border-radius: var(--vs-radius-card);
+  border-color: var(--vs-border-subtle);
+  padding: 20px;
+}
+.intro {
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.intro h1 {
+  font-size: 26px;
+}
+.application-examples {
+  margin-top: 36px;
+  padding-top: 24px;
+  border-top: 1px solid var(--vs-border-subtle);
+}
+.application-examples .vs-field {
+  margin-bottom: 8px;
+}
+
+/* Static ambient color behind opt-in material surfaces, no moving background. */
+.app {
+  background-image:
+    radial-gradient(
+      ellipse 65% 300px at 8% 0%,
+      color-mix(in srgb, var(--vs-accent) 9%, transparent),
+      transparent
+    ),
+    radial-gradient(
+      ellipse 45% 240px at 95% 12%,
+      color-mix(in srgb, var(--vs-primary) 7%, transparent),
+      transparent
+    );
+}
+.app > header.vs-glass {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  border-radius: 0;
+  border-width: 0 0 1px;
+  background: var(--vs-glass-bg);
+  box-shadow: 0 4px 20px var(--vs-glass-shadow);
+}
+.app[data-material="solid"] > header.vs-glass {
+  background: var(--vs-surface);
+  box-shadow: none;
+}
+.app[data-material="solid"] {
+  background-image: none;
+}
+.material-preview {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 28px;
+  position: relative;
+  background-image: linear-gradient(
+    115deg,
+    color-mix(in srgb, var(--vs-accent) 9%, transparent),
+    transparent 60%
+  );
+}
+.material-preview h2 {
+  font-size: 24px;
+  letter-spacing: -0.035em;
+  margin: 8px 0;
+}
+.material-preview p {
+  color: var(--vs-muted);
+  max-width: 580px;
+  margin: 8px 0;
+}
+.material-symbol {
+  font-weight: 800;
+  font-size: 64px;
+  letter-spacing: -6px;
+  color: var(--vs-text);
+  white-space: nowrap;
+}
+.material-symbol span {
+  color: var(--vs-accent);
+  font-size: 36px;
+  vertical-align: top;
+  letter-spacing: 0;
+}
+@supports not (backdrop-filter: blur(1px)) {
+  .app > header.vs-glass {
+    background: var(--vs-surface);
+  }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .app > header.vs-glass {
+    background: var(--vs-surface);
+    box-shadow: none;
+  }
+  .app {
+    background-image: none;
+  }
+}
+@media (max-width: 700px) {
+  .app > header.vs-glass {
+    position: static;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .material-symbol {
+    display: none;
+  }
+  .material-preview h2 {
+    font-size: 21px;
+  }
+}
+
+.application-examples .vs-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--vs-grid-min, 220px)), 1fr));
+}

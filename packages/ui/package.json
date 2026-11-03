@@ -1,6 +1,6 @@
 {
   "name": "@villetacore/velessoft-ui",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Compact, punk-inspired React components by villetacore: 35+ accessible, typed components.",
   "type": "module",
   "author": "villetacore <villetacore@proton.me>",

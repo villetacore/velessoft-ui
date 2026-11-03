@@ -175,3 +175,17 @@
   border-left-color: var(--vs-accent);
   font-weight: 700;
 }
+
+.vs-segmented {
+  border-radius: var(--vs-radius-control);
+  border-color: var(--vs-border-subtle);
+}
+.vs-segmented span {
+  border-radius: 4px;
+}
+.vs-pagination button {
+  border-radius: var(--vs-radius-control);
+}
+.vs-nav-list a {
+  border-radius: var(--vs-radius-control);
+}

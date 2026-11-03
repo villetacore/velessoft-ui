@@ -14,7 +14,7 @@
 | Link / focus | `--vs-link` | `#5845B8` | `#B6AAFF` |
 | Status | `--vs-success`, `--vs-warning`, `--vs-error`, `--vs-info` | | |
 
-Scale tokens: `--vs-space-1…9` (4–96px), `--vs-font-family`, `--vs-font-mono`, `--vs-font-size-*`, `--vs-radius-*`, `--vs-motion-fast|normal`, `--vs-control-height` (34px, 44px on coarse pointers), `--vs-panel-padding`, `--vs-gap`.
+Scale tokens: `--vs-space-1…9` (4–96px), `--vs-font-family`, `--vs-font-mono`, `--vs-font-size-*`, `--vs-radius-*`, `--vs-motion-fast|normal`, `--vs-control-height` (36px, 44px on coarse pointers), `--vs-panel-padding`, `--vs-gap`.
 
 Source: [tokens.json](../packages/tokens/tokens.json). Run `npm run tokens` after editing; it regenerates CSS, SCSS, JS, type declarations and Tailwind files. Commit generated files with the source.
 
@@ -41,6 +41,30 @@ Override tokens on any scope; components read them at runtime:
 
 ## Density and identity
 
-Desktop controls: minimum 34px. Coarse pointers: minimum 44px and editable text 16px. Do not shrink text to solve layout issues. Sharp corners and small violet shadows carry the punk character; decorative rotation belongs on marketing graphics.
+Desktop controls: minimum 36px. Coarse pointers: minimum 44px and editable text 16px. Do not shrink text to solve layout issues. Controls use 6px corners and cards use 12px corners. Lime primary actions, violet focus/selection and restrained monospace labels retain the studio identity. Hard offset shadows are removed from default product controls.
 
 The design catalog has its own legacy styles and is not a drop-in component stylesheet. Use package CSS in applications.
+
+## 0.4 design update
+
+`--vs-border-subtle` separates cards and decorative surfaces; form controls keep the stronger `--vs-border`. Keep important boundaries and focus indicators visible. The default Grid now constrains its minimum column width to the available container, preventing a 280px column from overflowing smaller screens.
+
+## Glass and motion (0.4)
+
+Use glass sparingly for floating headers, overview panels and dialogs. Keep dense tables, editor canvases and forms on solid surfaces. The lime/violet accents remain action and focus colors; glass is a surface material.
+
+```tsx
+import { GlassPanel } from '@villetacore/velessoft-ui';
+
+<div data-material="glass" data-motion="normal">
+  <GlassPanel animate aria-label="Project overview">Overview</GlassPanel>
+</div>
+```
+
+`GlassPanel` accepts standard div attributes and a forwarded ref. `animate` defaults to false; when enabled it plays a short entrance on mount. In other frameworks use `.vs-glass-panel` and optionally `.vs-reveal` with the shared stylesheet. `.vs-glass` adds the material without panel padding.
+
+Set `data-material="solid"` on an ancestor to remove blur/transparency from glass panels and dialogs. Set `data-motion="reduced"` to disable the new surface, tab and menu animations and control transitions. Apply preferences to a common ancestor of overlays too. System `prefers-reduced-motion`, `prefers-reduced-transparency` and forced colors take precedence. Without backdrop-filter support, surfaces are opaque.
+
+Customize `--vs-glass-bg`, `--vs-glass-border`, `--vs-glass-highlight`, `--vs-glass-shadow`, `--vs-glass-blur` (18px), `--vs-motion-fast`, `--vs-motion-normal`, `--vs-motion-slow` (280ms) and `--vs-motion-ease`. Avoid animating blur or large backgrounds: use short opacity/transform transitions. Test contrast against the actual content behind translucent panels.
+
+The dashboard includes independent Glass and Animations toggles. These are demonstration preferences held in memory.
