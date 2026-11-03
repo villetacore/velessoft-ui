@@ -89,7 +89,7 @@ function Workspace({
     <>
       <header className="vs-glass">
         <b>velessoft / UI</b>
-        <span>DIY WORKBENCH · by villetacore</span>
+        <span>OPEN SOURCE / by villetacore</span>
         <Stack direction="row" gap={8} style={{ marginLeft: "auto" }}>
           <Tooltip content="Открыть фильтры">
             <IconButton label="Фильтры" onClick={() => setDrawer(true)}>
@@ -118,7 +118,7 @@ function Workspace({
         <div className="intro">
           <div>
             <small>EXPERIMENTAL / 0.4.0</small>
-            <h1>Рабочая область</h1>
+            <h1>Рабочая область<span className="title-mark" aria-hidden="true"> /_</span></h1>
             <p>
               Настоящие React-компоненты. Данные примера хранятся только в
               памяти.

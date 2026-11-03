@@ -31,7 +31,7 @@ const scale = {
   "control-height": px(t.density.desktop.controlHeight),
   "panel-padding": px(t.density.desktop.panelPadding),
   gap: px(t.density.desktop.gap),
-  "shadow-offset": "0 0 0",
+  "shadow-offset": "2px 2px 0",
 };
 const brand = Object.fromEntries(
   Object.entries(t.brand).map(([k, v]) => [`brand-${kebab(k)}`, v]),

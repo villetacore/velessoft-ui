@@ -13,8 +13,8 @@
   --vs-space-7: 48px;
   --vs-space-8: 64px;
   --vs-space-9: 96px;
-  --vs-radius-control: 6px;
-  --vs-radius-card: 12px;
+  --vs-radius-control: 2px;
+  --vs-radius-card: 2px;
   --vs-radius-pill: 999px;
   --vs-font-family: "Manrope", ui-sans-serif, system-ui, sans-serif;
   --vs-font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
@@ -32,7 +32,7 @@
   --vs-control-height: 36px;
   --vs-panel-padding: 16px;
   --vs-gap: 12px;
-  --vs-shadow-offset: 0 0 0;
+  --vs-shadow-offset: 2px 2px 0;
   --vs-bg: #F7F8F5;
   --vs-surface: #FFFFFF;
   --vs-surface-muted: #EEF0EA;
@@ -48,7 +48,7 @@
   --vs-accent: #8B7CF6;
   --vs-info: #5845B8;
   --vs-overlay: #171B2488;
-  --vs-border-subtle: #DDE1E8;
+  --vs-border-subtle: #C7CBC4;
   --vs-glass-bg: #FFFFFFDB;
   --vs-glass-border: #FFFFFFE6;
   --vs-glass-highlight: #FFFFFFF2;
@@ -74,7 +74,7 @@
   --vs-accent: #8B7CF6;
   --vs-info: #5845B8;
   --vs-overlay: #171B2488;
-  --vs-border-subtle: #DDE1E8;
+  --vs-border-subtle: #C7CBC4;
   --vs-glass-bg: #FFFFFFDB;
   --vs-glass-border: #FFFFFFE6;
   --vs-glass-highlight: #FFFFFFF2;
@@ -96,7 +96,7 @@
   --vs-accent: #8B7CF6;
   --vs-info: #B6AAFF;
   --vs-overlay: #05070Bb3;
-  --vs-border-subtle: #394252;
+  --vs-border-subtle: #50575E;
   --vs-glass-bg: #222834E6;
   --vs-glass-border: #65708980;
   --vs-glass-highlight: #FFFFFF18;
@@ -122,7 +122,7 @@
     --vs-accent: #8B7CF6;
     --vs-info: #B6AAFF;
     --vs-overlay: #05070Bb3;
-    --vs-border-subtle: #394252;
+    --vs-border-subtle: #50575E;
     --vs-glass-bg: #222834E6;
     --vs-glass-border: #65708980;
     --vs-glass-highlight: #FFFFFF18;

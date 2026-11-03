@@ -134,12 +134,12 @@ Five additional React components are available in source: **SearchInput, Passwor
 
 ## Application kit preview — 0.4.0
 
-13 additional React components and a calmer visual theme are available in source. [Component API](docs/components.md#application-kit-040) · [Theming](docs/theming.md). Controls have familiar rounded corners and neutral panels, while lime/violet remain the identity. CSS patterns work across frameworks; native Vue/Svelte adapters remain future work.
+14 additional React components and the Open Workshop visual theme are available in source. [Component API](docs/components.md#application-kit-040) · [Theming](docs/theming.md). Crisp 2px corners, visible rules, monospace metadata and lime actions with violet offset shadows define the identity. CSS patterns work across frameworks; native Vue/Svelte adapters remain future work.
 
 ### Glass, with restraint
 
 The 0.4 preview adds `GlassPanel`, optional frosted dialogs, soft entrance transitions and independent material/motion toggles in the dashboard. Solid fallbacks and system accessibility preferences are built in. See [theming and materials](docs/theming.md#glass-and-motion-04).
 
-![Application kit with glass surfaces](docs/images/application-kit.jpg)
+![Open Workshop application kit](docs/images/application-kit.jpg)
 
 [Full dark preview](docs/images/material-dark.jpg) · [Light solid fallback](docs/images/material-light-solid.jpg)

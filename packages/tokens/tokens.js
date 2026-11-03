@@ -22,7 +22,7 @@ const tokens = {
     "accent": "#8B7CF6",
     "info": "#5845B8",
     "overlay": "#171B2488",
-    "borderSubtle": "#DDE1E8",
+    "borderSubtle": "#C7CBC4",
     "glassBg": "#FFFFFFDB",
     "glassBorder": "#FFFFFFE6",
     "glassHighlight": "#FFFFFFF2",
@@ -44,7 +44,7 @@ const tokens = {
     "accent": "#8B7CF6",
     "info": "#B6AAFF",
     "overlay": "#05070Bb3",
-    "borderSubtle": "#394252",
+    "borderSubtle": "#50575E",
     "glassBg": "#222834E6",
     "glassBorder": "#65708980",
     "glassHighlight": "#FFFFFF18",
@@ -62,8 +62,8 @@ const tokens = {
     96
   ],
   "radius": {
-    "control": 6,
-    "card": 12,
+    "control": 2,
+    "card": 2,
     "pill": 999
   },
   "type": {
@@ -86,10 +86,10 @@ const tokens = {
     "ease": "cubic-bezier(0.2, 0.8, 0.2, 1)"
   },
   "identity": {
-    "name": "Independent Studio",
+    "name": "Open Workshop",
     "displayCase": "uppercase, short headlines only",
     "marketingShadow": "3px 3px 0",
-    "productShadow": "none",
+    "productShadow": "2px 2px 0 on primary actions only",
     "stickerRotation": "-3deg to 3deg",
     "editorial": {
       "displayWeight": 800,

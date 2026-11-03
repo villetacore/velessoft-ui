@@ -41,7 +41,7 @@ Override tokens on any scope; components read them at runtime:
 
 ## Density and identity
 
-Desktop controls: minimum 36px. Coarse pointers: minimum 44px and editable text 16px. Do not shrink text to solve layout issues. Controls use 6px corners and cards use 12px corners. Lime primary actions, violet focus/selection and restrained monospace labels retain the studio identity. Hard offset shadows are removed from default product controls.
+Desktop controls: minimum 36px. Coarse pointers: minimum 44px and editable text 16px. Do not shrink text to solve layout issues. Controls and cards use 2px corners. Lime primary actions, violet focus/selection and restrained monospace labels retain the studio identity. Primary buttons have a 2px violet offset shadow; other controls remain flat. See [Open Workshop principles](../design/principles.md) for the visual grammar.
 
 The design catalog has its own legacy styles and is not a drop-in component stylesheet. Use package CSS in applications.
 

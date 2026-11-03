@@ -6,7 +6,7 @@
   color: var(--vs-text);
   background: var(--vs-surface);
   border: 1px solid var(--vs-border-subtle);
-  border-top: 1px solid var(--vs-border-subtle);
+  border-top: 2px solid var(--vs-border);
   border-radius: var(--vs-radius-card);
   min-width: 0;
 }
@@ -22,7 +22,7 @@
 }
 .vs-card.vs-interactive:hover {
   transform: translateY(-1px);
-  box-shadow: 0 4px 16px color-mix(in srgb, var(--vs-text) 8%, transparent);
+  box-shadow: 2px 2px 0 var(--vs-accent);
 }
 .vs-card-header {
   display: flex;

@@ -25,7 +25,8 @@
 .vs-button.vs-primary {
   background: var(--vs-primary);
   color: var(--vs-on-primary);
-  border-color: transparent;
+  border-color: var(--vs-on-primary);
+  font-weight: 700;
   box-shadow: var(--vs-shadow-offset) var(--vs-accent);
 }
 .vs-button.vs-danger {

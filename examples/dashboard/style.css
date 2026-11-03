@@ -1,242 +1,64 @@
-* {
-  box-sizing: border-box;
-}
-body {
-  margin: 0;
-  font:
-    14px/1.5 system-ui,
-    sans-serif;
-}
-.app {
-  min-height: 100vh;
-  background: var(--vs-bg);
-  color: var(--vs-text);
-}
+* { box-sizing: border-box; }
+body { margin: 0; font: 14px/1.5 system-ui, sans-serif; }
+.app { min-height: 100vh; background: var(--vs-bg); color: var(--vs-text); }
 .app > header {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  padding: 14px 24px;
-  border-bottom: 3px solid #b8ef65;
-  background: #171b24;
-  color: #f7f8f5;
-}
-.app > header span {
-  font: 11px monospace;
-  color: #b8c0cd;
-}
-main {
-  max-width: 1100px;
-  margin: auto;
-  padding: 32px 24px;
-}
-.intro {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-h1 {
-  font-size: 28px;
-  margin: 8px 0;
-}
-h2 {
-  font-size: 20px;
-}
-a {
-  color: var(--vs-link);
-}
-small {
-  font-family: monospace;
-  color: var(--vs-link);
-}
-.toolbar {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  margin: 24px 0;
-}
-.toolbar .vs-field {
-  flex: 1;
-  margin: 0;
-}
-.toolbar {
-  align-items: end;
-}
-.stats {
-  margin: 24px 0 8px;
-  padding: 16px;
-  border: 1px solid var(--vs-border);
-  background: var(--vs-surface);
-}
-.intro a {
-  font: 12px monospace;
-}
-.project {
-  display: flex;
-  justify-content: space-between;
-  padding: 14px 16px;
-  border-bottom: 1px solid var(--vs-border);
-}
-.samples {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
-}
-main > footer {
-  margin-top: 48px;
-  font: 12px monospace;
-  color: var(--vs-muted);
-}
-@media (max-width: 600px) {
-  .app > header,
-  .intro,
-  .toolbar {
-    flex-wrap: wrap;
-  }
-  .samples {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* A calmer application shell with a recognizable studio accent. */
-.app > header {
-  border-bottom: 1px solid var(--vs-border-subtle);
-  background: var(--vs-surface);
-  color: var(--vs-text);
-  padding: 12px 24px;
-}
-.app > header > b {
-  position: relative;
-  letter-spacing: -0.04em;
-}
-.app > header > b:before {
-  content: "";
-  display: inline-block;
-  width: 9px;
-  height: 9px;
-  border-radius: 3px;
-  background: var(--vs-primary);
-  border: 1px solid var(--vs-muted);
-  margin-right: 8px;
-}
-.app > header span {
-  color: var(--vs-muted);
-}
-.stats {
-  border-radius: var(--vs-radius-card);
-  border-color: var(--vs-border-subtle);
-  padding: 20px;
-}
-.intro {
-  gap: 16px;
-  flex-wrap: wrap;
-}
-.intro h1 {
-  font-size: 26px;
-}
-.application-examples {
-  margin-top: 36px;
-  padding-top: 24px;
-  border-top: 1px solid var(--vs-border-subtle);
-}
-.application-examples .vs-field {
-  margin-bottom: 8px;
-}
-
-/* Static ambient color behind opt-in material surfaces, no moving background. */
-.app {
-  background-image:
-    radial-gradient(
-      ellipse 65% 300px at 8% 0%,
-      color-mix(in srgb, var(--vs-accent) 9%, transparent),
-      transparent
-    ),
-    radial-gradient(
-      ellipse 45% 240px at 95% 12%,
-      color-mix(in srgb, var(--vs-primary) 7%, transparent),
-      transparent
-    );
+  display: flex; align-items: center; gap: 24px; padding: 12px 24px;
+  color: var(--vs-text); background: var(--vs-surface);
 }
 .app > header.vs-glass {
-  position: sticky;
-  top: 0;
-  z-index: 40;
-  border-radius: 0;
-  border-width: 0 0 1px;
-  background: var(--vs-glass-bg);
-  box-shadow: 0 4px 20px var(--vs-glass-shadow);
-}
-.app[data-material="solid"] > header.vs-glass {
-  background: var(--vs-surface);
+  position: sticky; top: 0; z-index: 40; border-radius: 0;
+  border-width: 0 0 2px; border-color: var(--vs-accent);
   box-shadow: none;
 }
-.app[data-material="solid"] {
-  background-image: none;
+.app > header > b { font-size: 17px; letter-spacing: -.05em; white-space: nowrap; }
+.app > header > b::before {
+  content: "/"; display: inline-block; margin-right: 9px;
+  font: 800 20px/1 var(--vs-font-mono); color: var(--vs-primary);
+  background: var(--vs-brand-graphite); padding: 3px 7px;
 }
+.app > header span { font: 11px var(--vs-font-mono); color: var(--vs-muted); }
+.app > header .vs-button[aria-pressed="true"] {
+  color: var(--vs-text); background: var(--vs-surface-muted);
+  border-bottom: 2px solid var(--vs-accent);
+}
+main { max-width: 1100px; margin: auto; padding: 28px 24px; }
+.intro { display: flex; justify-content: space-between; align-items: end; gap: 16px; flex-wrap: wrap; padding: 16px 0 20px; border-bottom: 1px solid var(--vs-border); }
+h1 { font-size: 30px; line-height: 1.15; letter-spacing: -.045em; margin: 12px 0; }
+h2 { font-size: 20px; letter-spacing: -.025em; }
+.title-mark { color: var(--vs-accent); font-family: var(--vs-font-mono); }
+a { color: var(--vs-link); text-underline-offset: 3px; }
+small { font: 11px var(--vs-font-mono); color: var(--vs-muted); letter-spacing: .05em; }
+.intro small { display: inline-block; padding: 3px 6px; border: 1px solid var(--vs-border); }
+.intro p { color: var(--vs-muted); max-width: 580px; margin: 8px 0 0; }
+.intro a { font: 12px var(--vs-font-mono); }
+.toolbar { display: flex; gap: 20px; align-items: end; margin: 24px 0; }
+.toolbar .vs-field { flex: 1; margin: 0; }
+.stats { margin: 0 0 8px; padding: 16px 0; border-bottom: 1px solid var(--vs-border); }
+.stats > .vs-stat { padding: 0 16px; border-left: 2px solid var(--vs-border-subtle); }
+.stats > .vs-stat:first-child { border-left-color: var(--vs-primary); }
+.stats .vs-stat-value { font-family: var(--vs-font-mono); font-size: 25px; letter-spacing: -.04em; }
+.project { display: flex; justify-content: space-between; padding: 14px 16px; border-bottom: 1px solid var(--vs-border); }
+.samples { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+main > footer { margin-top: 32px; padding-top: 16px; border-top: 1px solid var(--vs-border); font: 12px var(--vs-font-mono); color: var(--vs-muted); }
+.application-examples { margin-top: 36px; padding-top: 24px; border-top: 1px solid var(--vs-border); }
+.application-examples .vs-field { margin-bottom: 8px; }
+.application-examples .vs-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--vs-grid-min, 220px)), 1fr)); }
 .material-preview {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 24px;
-  margin-bottom: 28px;
-  position: relative;
-  background-image: linear-gradient(
-    115deg,
-    color-mix(in srgb, var(--vs-accent) 9%, transparent),
-    transparent 60%
-  );
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 24px; padding: 20px; margin-bottom: 28px;
+  background: var(--vs-primary); color: var(--vs-on-primary);
+  border: 1px solid var(--vs-on-primary); box-shadow: 4px 4px 0 var(--vs-accent);
 }
-.material-preview h2 {
-  font-size: 24px;
-  letter-spacing: -0.035em;
-  margin: 8px 0;
-}
-.material-preview p {
-  color: var(--vs-muted);
-  max-width: 580px;
-  margin: 8px 0;
-}
-.material-symbol {
-  font-weight: 800;
-  font-size: 64px;
-  letter-spacing: -6px;
-  color: var(--vs-text);
-  white-space: nowrap;
-}
-.material-symbol span {
-  color: var(--vs-accent);
-  font-size: 36px;
-  vertical-align: top;
-  letter-spacing: 0;
-}
-@supports not (backdrop-filter: blur(1px)) {
-  .app > header.vs-glass {
-    background: var(--vs-surface);
-  }
-}
-@media (prefers-reduced-transparency: reduce) {
-  .app > header.vs-glass {
-    background: var(--vs-surface);
-    box-shadow: none;
-  }
-  .app {
-    background-image: none;
-  }
-}
+.material-preview small { color: inherit; }
+.material-preview h2 { font-size: 25px; letter-spacing: -.04em; margin: 8px 0; }
+.material-preview p { max-width: 580px; margin: 8px 0 0; }
+.material-symbol { flex-shrink: 0; font: 800 64px/1 system-ui, sans-serif; letter-spacing: -7px; border-left: 1px solid currentColor; padding: 12px 20px; }
+.material-symbol span { font: 700 28px var(--vs-font-mono); vertical-align: top; letter-spacing: 0; }
 @media (max-width: 700px) {
-  .app > header.vs-glass {
-    position: static;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-  .material-symbol {
-    display: none;
-  }
-  .material-preview h2 {
-    font-size: 21px;
-  }
-}
-
-.application-examples .vs-grid {
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--vs-grid-min, 220px)), 1fr));
+  .app > header.vs-glass { position: static; flex-wrap: wrap; gap: 10px; }
+  .intro, .toolbar { flex-wrap: wrap; }
+  .samples { grid-template-columns: 1fr; }
+  .material-symbol { display: none; }
+  .material-preview h2 { font-size: 21px; }
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import {
-  GlassPanel,
   NumberInput,
   DateInput,
   TimeInput,
@@ -27,19 +26,19 @@ export function ApplicationExamples() {
   const [message, setMessage] = useState("");
   return (
     <section className="application-examples">
-      <GlassPanel animate className="material-preview">
+      <aside className="material-preview" aria-label="О наборе компонентов">
         <div>
-          <small>VELESSOFT / MATERIALS</small>
-          <h2>Знакомый интерфейс. Свой характер.</h2>
+          <small>VELESSOFT / OPEN WORKSHOP</small>
+          <h2>Собирай. Меняй. Публикуй.</h2>
           <p>
-            Мягкое стекло, спокойные поверхности и яркие акценты. В шапке можно
-            отключить прозрачность и движение.
+            Компоненты открыты для изменений. Исходники, токены и примеры —
+            в одном репозитории под MIT.
           </p>
         </div>
         <div className="material-symbol" aria-hidden="true">
           vs<span>+</span>
         </div>
-      </GlassPanel>
+      </aside>
       <PageHeader
         level={2}
         eyebrow="APPLICATION KIT / 0.4"
